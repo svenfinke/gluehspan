@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d33djidenj1p0"]
+
+[ext_resource type="TileSet" uid="uid://eba87q6e1trb" path="res://assets/tiny.tres" id="1_wmdl8"]
+[ext_resource type="PackedScene" uid="uid://bsb6blqs8lxl0" path="res://components/merchant_component.tscn" id="2_nhph2"]
+
+[node name="Marketplace" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_wmdl8")
+format = 2
+layer_0/tile_data = PackedInt32Array(262151, 196608, 5, 196616, 196608, 5, 262152, 196608, 6, 131081, 262145, 4, 196617, 262145, 5, 262153, 262145, 6, 131082, 327681, 4, 196618, 458753, 5, 262154, 262145, 7, 131083, 458753, 4, 196619, 327681, 5, 262155, 327681, 6, 131084, 327681, 4, 196620, 458753, 5, 262156, 262145, 7, 131085, 327681, 4, 196621, 327681, 5, 262157, 393217, 7, 131086, 327681, 4, 196622, 327681, 5, 262158, 458753, 7, 131087, 393217, 4, 196623, 393217, 5, 262159, 458753, 6, 327695, 720897, 6, 131088, 589825, 3, 196624, 589825, 4, 262160, 589825, 3, 131089, 589825, 3, 196625, 327680, 7, 262161, 589825, 5, 131090, 655361, 3, 196626, 655361, 4, 262162, 655361, 5)
+
+[node name="MerchantComponent" parent="." instance=ExtResource("2_nhph2")]
+sell_interval_in_seconds = 10.0
+max_amount_per_sell = 10
+sell_item_slots = Array[String](["", ""])

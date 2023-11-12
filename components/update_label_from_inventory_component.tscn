@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://1hbiubcmaxif"]
+
+[ext_resource type="Script" path="res://components/update_label_from_inventory_component.gd" id="1_gruch"]
+[ext_resource type="Resource" uid="uid://debwxhtv0aaxx" path="res://resources/inventory.tres" id="2_6hvbv"]
+
+[node name="UpdateLabelFromInventoryComponent" type="Node"]
+script = ExtResource("1_gruch")
+inventory = ExtResource("2_6hvbv")

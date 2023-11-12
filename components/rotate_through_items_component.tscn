@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c21gnkpph78n5"]
+
+[ext_resource type="Script" path="res://components/rotate_through_items_component.gd" id="1_c1yv6"]
+[ext_resource type="Resource" uid="uid://debwxhtv0aaxx" path="res://resources/inventory.tres" id="2_f8lny"]
+
+[node name="RotateThroughItemsComponent" type="Node"]
+script = ExtResource("1_c1yv6")
+inventory = ExtResource("2_f8lny")

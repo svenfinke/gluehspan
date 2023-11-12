@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://xnvr8c2gs02x"]
+
+[ext_resource type="Script" path="res://components/inventory_component.gd" id="1_rffau"]
+[ext_resource type="Resource" uid="uid://debwxhtv0aaxx" path="res://resources/inventory.tres" id="2_7613x"]
+
+[node name="InventoryComponent" type="Node"]
+script = ExtResource("1_rffau")
+inventory = ExtResource("2_7613x")

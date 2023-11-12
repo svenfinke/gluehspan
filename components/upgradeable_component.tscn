@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp4yn4tpj75cs"]
+
+[ext_resource type="Script" path="res://components/upgradeable_component.gd" id="1_l4s51"]
+[ext_resource type="Resource" uid="uid://debwxhtv0aaxx" path="res://resources/inventory.tres" id="2_4lter"]
+
+[node name="UpgradeableComponent" type="Node"]
+script = ExtResource("1_l4s51")
+inventory = ExtResource("2_4lter")

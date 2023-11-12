@@ -1,0 +1,13 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://ts26fxsvh706"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1legm"]
+load_path = "res://.godot/imported/tan_pressed.png-20e9097d000f3d505202bfa5644b81b4.ctex"
+
+[resource]
+texture = SubResource("CompressedTexture2D_1legm")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1

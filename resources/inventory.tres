@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="InventoryResource" load_steps=9 format=3 uid="uid://debwxhtv0aaxx"]
+
+[ext_resource type="Script" path="res://classes/inventory_item.gd" id="1_2vwj7"]
+[ext_resource type="Script" path="res://classes/inventory.gd" id="1_rkxys"]
+[ext_resource type="Texture2D" uid="uid://1y3rnabq6tlg" path="res://assets/kenney_tiny-town/Tiles/tile_0093.png" id="2_p5wlp"]
+[ext_resource type="Texture2D" uid="uid://dxrro5svwlasi" path="res://assets/kenney_tiny-ski/Tiles/tile_0081.png" id="2_roduq"]
+[ext_resource type="Texture2D" uid="uid://f37vwxoh34qx" path="res://assets/kenney_tiny-dungeon/Tiles/tile_0074.png" id="3_15ycj"]
+
+[sub_resource type="Resource" id="Resource_plqr1"]
+script = ExtResource("1_2vwj7")
+name = "money"
+in_stock = 200
+texture = ExtResource("2_p5wlp")
+base_price = 1.0
+
+[sub_resource type="Resource" id="Resource_5byio"]
+script = ExtResource("1_2vwj7")
+name = "iron_ore"
+in_stock = 0
+texture = ExtResource("2_roduq")
+base_price = 1.0
+
+[sub_resource type="Resource" id="Resource_qdwgl"]
+script = ExtResource("1_2vwj7")
+name = "iron_ingot"
+in_stock = 0
+texture = ExtResource("3_15ycj")
+base_price = 10.0
+
+[resource]
+script = ExtResource("1_rkxys")
+items = Array[ExtResource("1_2vwj7")]([SubResource("Resource_plqr1"), SubResource("Resource_5byio"), SubResource("Resource_qdwgl")])

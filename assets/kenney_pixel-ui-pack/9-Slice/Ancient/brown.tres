@@ -1,0 +1,17 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://b7dtm1xmdu31a"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gfd8l"]
+load_path = "res://.godot/imported/brown.png-7a3a29e4193d40608aee642a493479f7.ctex"
+
+[resource]
+texture = SubResource("CompressedTexture2D_gfd8l")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 7.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1

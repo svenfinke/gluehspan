@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://d31jvtxihgnms"]
+
+[ext_resource type="Script" path="res://components/crafting_component.gd" id="1_13bas"]
+[ext_resource type="Resource" uid="uid://debwxhtv0aaxx" path="res://resources/inventory.tres" id="2_677gl"]
+[ext_resource type="Texture2D" uid="uid://dmk32gqvkdmvm" path="res://assets/kenney_tiny-ski/Tiles/tile_0083.png" id="2_yc5kn"]
+
+[sub_resource type="Gradient" id="Gradient_0hje0"]
+offsets = PackedFloat32Array(0.553792, 0.999118)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="CraftingComponent" type="Node2D"]
+script = ExtResource("1_13bas")
+inventory = ExtResource("2_677gl")
+
+[node name="ProductionParticle" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 1
+lifetime = 0.5
+one_shot = true
+texture = ExtResource("2_yc5kn")
+direction = Vector2(2.08165e-12, -1)
+spread = 13.49
+gravity = Vector2(2.08165e-12, 2.08165e-12)
+initial_velocity_min = 61.89
+initial_velocity_max = 61.89
+color_ramp = SubResource("Gradient_0hje0")

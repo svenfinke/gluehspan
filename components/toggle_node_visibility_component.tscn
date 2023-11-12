@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://q14ts1l2orcg"]
+
+[ext_resource type="Script" path="res://components/toggle_node_visibility_component.gd" id="1_aadua"]
+
+[node name="ToggleNodeVisibilityComponent" type="Node"]
+script = ExtResource("1_aadua")

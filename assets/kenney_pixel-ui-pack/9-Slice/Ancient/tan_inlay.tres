@@ -1,0 +1,17 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://dde1kbsek3ign"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i1rgf"]
+load_path = "res://.godot/imported/tan_inlay.png-97a3e3af90c5e7c0c599230ba855141d.ctex"
+
+[resource]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+texture = SubResource("CompressedTexture2D_i1rgf")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
