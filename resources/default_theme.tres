@@ -1,10 +1,20 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dsjo7yr5ushde"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dsjo7yr5ushde"]
 
 [ext_resource type="StyleBox" uid="uid://dde1kbsek3ign" path="res://assets/kenney_pixel-ui-pack/9-Slice/Ancient/tan_inlay.tres" id="1_3j1rt"]
 [ext_resource type="StyleBox" uid="uid://ts26fxsvh706" path="res://assets/kenney_pixel-ui-pack/9-Slice/Ancient/tan_pressed.tres" id="1_mpiag"]
 [ext_resource type="StyleBox" uid="uid://b7dtm1xmdu31a" path="res://assets/kenney_pixel-ui-pack/9-Slice/Ancient/brown.tres" id="2_jlp84"]
 [ext_resource type="FontFile" uid="uid://cav5h4lpwxqrb" path="res://assets/kenney_kenney-fonts/Fonts/Kenney Pixel.ttf" id="3_3014y"]
 [ext_resource type="StyleBox" uid="uid://c6ci7avd1font" path="res://assets/kenney_pixel-ui-pack/tan_close_button.tres" id="3_i0grf"]
+[ext_resource type="Texture2D" uid="uid://c31fcms2ftnno" path="res://assets/kenney_pixel-ui-pack/9-Slice/space.png" id="4_v3n1p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ghoua"]
+texture = ExtResource("4_v3n1p")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
 [resource]
 default_font = ExtResource("3_3014y")
@@ -14,5 +24,6 @@ Button/styles/pressed = ExtResource("1_mpiag")
 CloseButton/styles/hover = ExtResource("3_i0grf")
 CloseButton/styles/normal = ExtResource("3_i0grf")
 CloseButton/styles/pressed = ExtResource("3_i0grf")
+DarkPanel/styles/panel = SubResource("StyleBoxTexture_ghoua")
 Panel/styles/panel = ExtResource("1_3j1rt")
 PanelContainer/styles/panel = ExtResource("2_jlp84")

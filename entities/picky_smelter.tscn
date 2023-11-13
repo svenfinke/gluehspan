@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgjrh0b8lkb7h"]
+[gd_scene load_steps=6 format=3 uid="uid://dgjrh0b8lkb7h"]
 
 [ext_resource type="TileSet" uid="uid://eba87q6e1trb" path="res://assets/tiny.tres" id="1_tu1k5"]
 [ext_resource type="PackedScene" uid="uid://d31jvtxihgnms" path="res://components/crafting_component.tscn" id="2_t1ekc"]
 [ext_resource type="PackedScene" uid="uid://cp4yn4tpj75cs" path="res://components/upgradeable_component.tscn" id="3_j8j17"]
+[ext_resource type="Theme" uid="uid://dsjo7yr5ushde" path="res://resources/default_theme.tres" id="4_slarn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1q7nx"]
 
@@ -36,3 +37,71 @@ upgradeable_component = NodePath("../UpgradeableComponent")
 [node name="UpgradeableComponent" parent="." instance=ExtResource("3_j8j17")]
 upgrade_cost_per_level = Array[int]([30])
 level_to_tier_reference = Array[int]([0, 1])
+
+[node name="NameplateTier0" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 316.0
+offset_top = -234.0
+offset_right = 470.0
+offset_bottom = -214.0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("4_slarn")
+
+[node name="Panel" type="Panel" parent="NameplateTier0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"DarkPanel"
+
+[node name="Label" type="Label" parent="NameplateTier0/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameplateTier1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 317.0
+offset_top = -301.0
+offset_right = 471.0
+offset_bottom = -281.0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("4_slarn")
+
+[node name="Panel" type="Panel" parent="NameplateTier1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"DarkPanel"
+
+[node name="Label" type="Label" parent="NameplateTier1/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Picky Smelter"
+horizontal_alignment = 1
+vertical_alignment = 1
