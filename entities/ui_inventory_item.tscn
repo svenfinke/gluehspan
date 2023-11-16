@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://df24uef8fmfd2"]
+
+[ext_resource type="Texture2D" uid="uid://f37vwxoh34qx" path="res://assets/kenney_tiny-dungeon/Tiles/tile_0074.png" id="2_8l5dm"]
+
+[node name="Item" type="HBoxContainer"]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "0"
+
+[node name="Texture" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_8l5dm")

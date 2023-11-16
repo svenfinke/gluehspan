@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpo42o6twnqlb"]
+
+[ext_resource type="Script" path="res://components/recipes_component.gd" id="1_lemmh"]
+
+[node name="RecipesComponent" type="Node"]
+script = ExtResource("1_lemmh")

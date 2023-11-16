@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cye2t304c5ntj"]
+
+[ext_resource type="Script" path="res://components/open_entity_ui_component.gd" id="1_gy0qv"]
+
+[node name="OpenEntityUiComponent" type="Node"]
+script = ExtResource("1_gy0qv")

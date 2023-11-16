@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpt36f8u0lpt1"]
+
+[ext_resource type="Texture2D" uid="uid://dxrro5svwlasi" path="res://assets/kenney_tiny-ski/Tiles/tile_0081.png" id="1_syufx"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+size_flags_horizontal = 4
+
+[node name="Texture" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_syufx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "123
+"

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8elyafsqa5w4"]
+
+[ext_resource type="Script" path="res://components/show_on_ui_event_component.gd" id="1_agriw"]
+
+[node name="ShowOnUIEventComponent" type="Node"]
+script = ExtResource("1_agriw")

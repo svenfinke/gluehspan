@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://d14r8c7purdf3"]
+[gd_scene load_steps=7 format=3 uid="uid://d14r8c7purdf3"]
 
 [ext_resource type="PackedScene" uid="uid://cys6ebkb1bqdg" path="res://components/production_component.tscn" id="1_xupnw"]
 [ext_resource type="TileSet" uid="uid://eba87q6e1trb" path="res://assets/tiny.tres" id="2_1pwg3"]
 [ext_resource type="PackedScene" uid="uid://cp4yn4tpj75cs" path="res://components/upgradeable_component.tscn" id="3_3s0tf"]
+[ext_resource type="Theme" uid="uid://dsjo7yr5ushde" path="res://resources/default_theme.tres" id="4_i3mof"]
+[ext_resource type="PackedScene" uid="uid://cye2t304c5ntj" path="res://components/open_entity_ui_component.tscn" id="5_gfhj6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lh3ae"]
 
-[node name="Tiny mans mine" type="Node2D"]
+[node name="Tiny Mans Mine" type="Node2D"]
+metadata/Name = "Tiny Mans Mine"
 
 [node name="Tier0" type="TileMap" parent="."]
 tile_set = ExtResource("2_1pwg3")
@@ -37,3 +40,39 @@ upgradeable_component = NodePath("../UpgradeableComponent")
 max_level = 2
 upgrade_cost_per_level = Array[int]([10, 50])
 level_to_tier_reference = Array[int]([0, 0, 0])
+
+[node name="OpenEntityUiComponent" parent="." instance=ExtResource("5_gfhj6")]
+
+[node name="NameplateTier0" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -295.0
+offset_top = -184.0
+offset_right = -141.0
+offset_bottom = -164.0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("4_i3mof")
+
+[node name="Panel" type="Panel" parent="NameplateTier0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"DarkPanel"
+
+[node name="Label" type="Label" parent="NameplateTier0/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tiny Mans Mine"
+horizontal_alignment = 1
+vertical_alignment = 1

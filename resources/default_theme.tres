@@ -1,14 +1,15 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dsjo7yr5ushde"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dsjo7yr5ushde"]
 
 [ext_resource type="StyleBox" uid="uid://dde1kbsek3ign" path="res://assets/kenney_pixel-ui-pack/9-Slice/Ancient/tan_inlay.tres" id="1_3j1rt"]
 [ext_resource type="StyleBox" uid="uid://ts26fxsvh706" path="res://assets/kenney_pixel-ui-pack/9-Slice/Ancient/tan_pressed.tres" id="1_mpiag"]
+[ext_resource type="StyleBox" uid="uid://bgddfni708aog" path="res://assets/kenney_pixel-ui-pack/9-Slice/Ancient/tan.tres" id="2_54j67"]
 [ext_resource type="StyleBox" uid="uid://b7dtm1xmdu31a" path="res://assets/kenney_pixel-ui-pack/9-Slice/Ancient/brown.tres" id="2_jlp84"]
 [ext_resource type="FontFile" uid="uid://cav5h4lpwxqrb" path="res://assets/kenney_kenney-fonts/Fonts/Kenney Pixel.ttf" id="3_3014y"]
 [ext_resource type="StyleBox" uid="uid://c6ci7avd1font" path="res://assets/kenney_pixel-ui-pack/tan_close_button.tres" id="3_i0grf"]
-[ext_resource type="Texture2D" uid="uid://c31fcms2ftnno" path="res://assets/kenney_pixel-ui-pack/9-Slice/space.png" id="4_v3n1p"]
+[ext_resource type="Texture2D" uid="uid://4jqrmdrk4e5n" path="res://assets/kenney_pixel-ui-pack/9-Slice/Ancient/grey_pressed.png" id="4_du4xy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ghoua"]
-texture = ExtResource("4_v3n1p")
+texture = ExtResource("4_du4xy")
 texture_margin_left = 5.0
 texture_margin_top = 5.0
 texture_margin_right = 5.0
@@ -19,11 +20,14 @@ axis_stretch_vertical = 1
 [resource]
 default_font = ExtResource("3_3014y")
 Button/styles/hover = ExtResource("1_mpiag")
-Button/styles/normal = ExtResource("1_3j1rt")
+Button/styles/normal = ExtResource("2_54j67")
 Button/styles/pressed = ExtResource("1_mpiag")
 CloseButton/styles/hover = ExtResource("3_i0grf")
 CloseButton/styles/normal = ExtResource("3_i0grf")
 CloseButton/styles/pressed = ExtResource("3_i0grf")
 DarkPanel/styles/panel = SubResource("StyleBoxTexture_ghoua")
+IconButton/styles/hover = ExtResource("1_mpiag")
+IconButton/styles/normal = ExtResource("1_3j1rt")
+IconButton/styles/pressed = ExtResource("1_mpiag")
 Panel/styles/panel = ExtResource("1_3j1rt")
 PanelContainer/styles/panel = ExtResource("2_jlp84")

@@ -7,8 +7,6 @@ extends Node
 @export var level_to_tier_reference: Array[int] = []
 
 func _ready():
-	for child in get_parent().find_children("AreaTier*"):
-		child.input_event.connect(_on_area_click)
 	update_visibility()
 
 func update_visibility():
@@ -30,8 +28,3 @@ func upgrade() -> void:
 	inventory.consume("money", upgrade_cost_per_level[level])
 	level += 1
 	update_visibility()
-
-
-func _on_area_click(_viewport: Node, event: InputEvent, _shape_idx: int):
-	if event.is_action_pressed("ui_left_click"):
-		upgrade()

@@ -1,9 +1,11 @@
-[gd_resource type="TileSet" load_steps=12 format=3 uid="uid://eba87q6e1trb"]
+[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://eba87q6e1trb"]
 
 [ext_resource type="Texture2D" uid="uid://pr46s7utr63o" path="res://assets/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="1_fhsm8"]
 [ext_resource type="Texture2D" uid="uid://byrvxxb5bx8f6" path="res://assets/kenney_tiny-town/Tilemap/tilemap_packed.png" id="2_6xnph"]
+[ext_resource type="Shader" path="res://assets/shaders/tile_wiggle.gdshader" id="3_djga4"]
 [ext_resource type="Texture2D" uid="uid://bagrkrikhlolt" path="res://assets/kenney_tiny-battle/Tilemap/tilemap_packed.png" id="3_f3vm4"]
 [ext_resource type="Texture2D" uid="uid://rew8xovwcl8e" path="res://assets/kenney_tiny-ski/Tilemap/tilemap_packed.png" id="4_8wxek"]
+[ext_resource type="Texture2D" uid="uid://dlvdslj4slh2f" path="res://assets/gluehspahn-resources.png" id="5_2bxyx"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_pouah"]
 tile_data = PackedInt32Array(0, 262144, 0, 65536, 196608, 1, 131072, 262144, 1, 196608, 589824, 4, 262144, 589824, 4, 1, 131072, 2, 65537, 0, 0, 131073, 131072, 0, 196609, 327680, 2, 262145, 262144, 3, 2, 131072, 2, 65538, 0, 0, 131074, 131072, 0, 196610, 262144, 3, 262146, 262144, 2, 327682, 655360, 6, 3, 131072, 2, 65539, 0, 0, 131075, 131072, 0, 196611, 262144, 3, 262147, 262144, 3, 327683, 196608, 5, 4, 131072, 2, 65540, 0, 0, 131076, 131072, 0, 196612, 327680, 2, 262148, 589824, 3, 5, 327680, 0, 65541, 65536, 1, 131077, 327680, 1, 196613, 720896, 4, 262149, 720896, 4, 65542, 196608, 5, 131078, 196608, 6, 196614, 720896, 5, 262150, 589824, 6, 327686, 589824, 6, 393222, 524288, 5, 131079, 655360, 6, 196615, 196608, 5)
@@ -69,7 +71,10 @@ texture = ExtResource("1_fhsm8")
 2:4/0 = 0
 3:4/0 = 0
 4:4/0 = 0
+5:4/next_alternative_id = 2
 5:4/0 = 0
+5:4/1 = 1
+5:4/1/flip_h = true
 6:4/0 = 0
 7:4/0 = 0
 8:4/0 = 0
@@ -148,6 +153,30 @@ texture = ExtResource("1_fhsm8")
 9:10/0 = 0
 10:10/0 = 0
 11:10/0 = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_73d5o"]
+shader = ExtResource("3_djga4")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.096
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = 0.771
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j1xa6"]
+shader = ExtResource("3_djga4")
+shader_parameter/speed = 1.0
+shader_parameter/minStrength = 0.05
+shader_parameter/maxStrength = 0.09
+shader_parameter/strengthScale = 100.0
+shader_parameter/interval = 3.5
+shader_parameter/detail = 1.0
+shader_parameter/distortion = null
+shader_parameter/heightOffset = 0.7
+shader_parameter/offset = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5pf4y"]
 texture = ExtResource("2_6xnph")
@@ -246,6 +275,7 @@ texture = ExtResource("2_6xnph")
 3:1/0 = 0
 4:1/0 = 0
 5:1/0 = 0
+5:1/0/material = SubResource("ShaderMaterial_73d5o")
 6:1/0 = 0
 6:1/0/terrain_set = 0
 6:1/0/terrain = 3
@@ -300,6 +330,7 @@ texture = ExtResource("2_6xnph")
 3:2/0 = 0
 4:2/0 = 0
 5:2/0 = 0
+5:2/0/material = SubResource("ShaderMaterial_j1xa6")
 6:2/0 = 0
 6:2/0/terrain_set = 0
 6:2/0/terrain = 3
@@ -505,8 +536,10 @@ texture = ExtResource("3_f3vm4")
 13:0/0 = 0
 14:0/0 = 0
 15:0/0 = 0
+16:0/animation_columns = 2
+16:0/animation_frame_0/duration = 1.0
+16:0/animation_frame_1/duration = 1.0
 16:0/0 = 0
-17:0/0 = 0
 0:1/0 = 0
 0:1/0/terrain_set = 0
 0:1/0/terrain = 2
@@ -549,8 +582,10 @@ texture = ExtResource("3_f3vm4")
 13:1/0 = 0
 14:1/0 = 0
 15:1/0 = 0
+16:1/animation_columns = 2
+16:1/animation_frame_0/duration = 1.0
+16:1/animation_frame_1/duration = 1.0
 16:1/0 = 0
-17:1/0 = 0
 0:2/0 = 0
 0:2/0/terrain_set = 0
 0:2/0/terrain = 2
@@ -597,8 +632,9 @@ texture = ExtResource("3_f3vm4")
 13:2/0 = 0
 14:2/0 = 0
 15:2/0 = 0
+16:2/animation_frame_0/duration = 1.0
+16:2/animation_frame_1/duration = 1.0
 16:2/0 = 0
-17:2/0 = 0
 0:3/0 = 0
 0:3/0/terrain_set = 0
 0:3/0/terrain = 2
@@ -641,8 +677,9 @@ texture = ExtResource("3_f3vm4")
 13:3/0 = 0
 14:3/0 = 0
 15:3/0 = 0
+16:3/animation_frame_0/duration = 1.0
+16:3/animation_frame_1/duration = 1.0
 16:3/0 = 0
-17:3/0 = 0
 0:4/0 = 0
 0:4/0/terrain_set = 0
 0:4/0/terrain = 2
@@ -683,8 +720,9 @@ texture = ExtResource("3_f3vm4")
 13:4/0 = 0
 14:4/0 = 0
 15:4/0 = 0
+16:4/animation_frame_0/duration = 1.0
+16:4/animation_frame_1/duration = 1.0
 16:4/0 = 0
-17:4/0 = 0
 0:5/0 = 0
 0:5/0/terrain_set = 0
 0:5/0/terrain = 2
@@ -957,6 +995,33 @@ texture = ExtResource("4_8wxek")
 10:10/0 = 0
 11:10/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3u5cv"]
+texture = ExtResource("5_2bxyx")
+margins = Vector2i(1, 1)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+
 [resource]
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Dirt"
@@ -971,6 +1036,7 @@ sources/0 = SubResource("TileSetAtlasSource_u7coj")
 sources/1 = SubResource("TileSetAtlasSource_5pf4y")
 sources/2 = SubResource("TileSetAtlasSource_f84sx")
 sources/3 = SubResource("TileSetAtlasSource_rgdui")
+sources/4 = SubResource("TileSetAtlasSource_3u5cv")
 pattern_0 = SubResource("TileMapPattern_pouah")
 pattern_1 = SubResource("TileMapPattern_epgrs")
 pattern_2 = SubResource("TileMapPattern_inf57")
