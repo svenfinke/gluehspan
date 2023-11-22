@@ -1,10 +1,11 @@
-[gd_resource type="TileSet" load_steps=17 format=3 uid="uid://eba87q6e1trb"]
+[gd_resource type="TileSet" load_steps=19 format=3 uid="uid://eba87q6e1trb"]
 
 [ext_resource type="Texture2D" uid="uid://pr46s7utr63o" path="res://assets/kenney_tiny-dungeon/Tilemap/tilemap_packed.png" id="1_fhsm8"]
 [ext_resource type="Texture2D" uid="uid://byrvxxb5bx8f6" path="res://assets/kenney_tiny-town/Tilemap/tilemap_packed.png" id="2_6xnph"]
 [ext_resource type="Shader" path="res://assets/shaders/tile_wiggle.gdshader" id="3_djga4"]
 [ext_resource type="Texture2D" uid="uid://bagrkrikhlolt" path="res://assets/kenney_tiny-battle/Tilemap/tilemap_packed.png" id="3_f3vm4"]
 [ext_resource type="Texture2D" uid="uid://rew8xovwcl8e" path="res://assets/kenney_tiny-ski/Tilemap/tilemap_packed.png" id="4_8wxek"]
+[ext_resource type="Shader" path="res://assets/shaders/water.gdshader" id="4_irbc2"]
 [ext_resource type="Texture2D" uid="uid://dlvdslj4slh2f" path="res://assets/gluehspahn-resources.png" id="5_2bxyx"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_pouah"]
@@ -518,6 +519,9 @@ texture = ExtResource("2_6xnph")
 10:10/0 = 0
 11:10/0 = 0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v2ukr"]
+shader = ExtResource("4_irbc2")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f84sx"]
 texture = ExtResource("3_f3vm4")
 0:0/0 = 0
@@ -596,6 +600,7 @@ texture = ExtResource("3_f3vm4")
 0:2/0/terrains_peering_bit/top_left_corner = 1
 0:2/0/terrains_peering_bit/top_side = 2
 1:2/0 = 0
+1:2/0/material = SubResource("ShaderMaterial_v2ukr")
 1:2/0/terrain_set = 0
 1:2/0/terrain = 2
 1:2/0/terrains_peering_bit/right_side = 2

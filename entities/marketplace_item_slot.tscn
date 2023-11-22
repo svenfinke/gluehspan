@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://crdfb5wsqa14i"]
+
+[ext_resource type="PackedScene" uid="uid://b4rap4oh0hsb7" path="res://components/rotate_item_component.tscn" id="1_t3ggo"]
+[ext_resource type="Texture2D" uid="uid://f37vwxoh34qx" path="res://assets/kenney_tiny-dungeon/Tiles/tile_0074.png" id="1_wrlgi"]
+[ext_resource type="Texture2D" uid="uid://1y3rnabq6tlg" path="res://assets/kenney_tiny-town/Tiles/tile_0093.png" id="2_7ynax"]
+
+[node name="ItemSlot" type="HBoxContainer"]
+size_flags_vertical = 2
+
+[node name="RotateItemComponent" parent="." instance=ExtResource("1_t3ggo")]
+
+[node name="RotateItemOnSale" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+focus_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="RotateItemOnSale"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 1.0
+offset_right = 4.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wrlgi")
+stretch_mode = 5
+
+[node name="Price" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PriceEntry" type="HBoxContainer" parent="Price"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Texture" type="TextureRect" parent="Price/PriceEntry"]
+layout_mode = 2
+texture = ExtResource("2_7ynax")
+
+[node name="Label" type="Label" parent="Price/PriceEntry"]
+layout_mode = 2
+text = "123
+"

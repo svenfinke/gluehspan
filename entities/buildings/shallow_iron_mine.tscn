@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://w2r4r4rv4605"]
+
+[ext_resource type="TileSet" uid="uid://eba87q6e1trb" path="res://assets/tiny.tres" id="1_pbehf"]
+[ext_resource type="PackedScene" uid="uid://cys6ebkb1bqdg" path="res://components/production_component.tscn" id="2_0o0de"]
+[ext_resource type="PackedScene" uid="uid://cp4yn4tpj75cs" path="res://components/upgradeable_component.tscn" id="3_41jaa"]
+[ext_resource type="Resource" uid="uid://cppg7auhja708" path="res://resources/milestones/basic_copper_production.tres" id="4_e0n5b"]
+[ext_resource type="PackedScene" uid="uid://cye2t304c5ntj" path="res://components/open_entity_ui_component.tscn" id="5_pcnb4"]
+[ext_resource type="PackedScene" uid="uid://cel4nbymoiovo" path="res://components/flag_component.tscn" id="7_u80ax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lh3ae"]
+
+[node name="Shallow Iron Mine" type="Node2D"]
+texture_filter = 1
+metadata/Name = "Old Zinc Mine"
+
+[node name="Tier1" type="TileMap" parent="."]
+tile_set = ExtResource("1_pbehf")
+format = 2
+layer_0/name = "Background"
+layer_1/name = "Buildings"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(65537, 1048578, 1, 65535, 262145, 6, 0, 262145, 7, 1, 327681, 7, 2, 458753, 6, -65537, 262145, 4, -1, 262145, 5, -131070, 393217, 4, -65534, 393217, 5, -131072, 327681, 4, -65536, 327681, 5, -131071, 327681, 4, -65535, 327681, 5, -196605, 327681, 4, -131069, 327681, 5, -196604, 393217, 4, -131068, 393217, 5, -196608, 262145, 4, -196607, 327681, 4, -196606, 327681, 4, -65533, 327681, 6, -65532, 458753, 6, 131071, 458753, 8, 3, 655360, 5, 4, 720896, 5, 65540, 720896, 6, 131076, 720896, 7, 131075, 655360, 7, 131074, 458752, 6, 65539, 458752, 4, 65538, 327680, 7)
+
+[node name="Tier0" type="TileMap" parent="."]
+visible = false
+tile_set = ExtResource("1_pbehf")
+format = 2
+layer_0/name = "Background"
+layer_1/name = "Buildings"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(-65536, 1048578, 0)
+
+[node name="AreaTier0" type="Area2D" parent="."]
+position = Vector2(9, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTier0"]
+shape = SubResource("RectangleShape2D_lh3ae")
+
+[node name="AreaTier1" type="Area2D" parent="."]
+position = Vector2(24, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTier1"]
+shape = SubResource("RectangleShape2D_lh3ae")
+
+[node name="ProductionComponent" parent="." node_paths=PackedStringArray("upgradeable_component") instance=ExtResource("2_0o0de")]
+position = Vector2(9, -43)
+produced_item = "iron_ore"
+base_production_per_second_per_level = Array[float]([2.08165e-12, 1.0, 2.0, 4.0])
+upgradeable_component = NodePath("../UpgradeableComponent")
+
+[node name="UpgradeableComponent" parent="." instance=ExtResource("3_41jaa")]
+max_level = 2
+upgrade_cost_per_level = Array[int]([500, 750, 1500])
+level_to_tier_reference = Array[int]([0, 1, 1])
+milestone_required_per_level = Array[Resource("res://classes/milestone.gd")]([ExtResource("4_e0n5b")])
+
+[node name="OpenEntityUiComponent" parent="." instance=ExtResource("5_pcnb4")]
+
+[node name="FlagComponent" parent="." node_paths=PackedStringArray("upgradeable_component") instance=ExtResource("7_u80ax")]
+upgradeable_component = NodePath("../UpgradeableComponent")
+flags = Array[Vector2]([Vector2(2.08165e-12, -1), Vector2(1, 1)])

@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 		var left_right = Input.get_axis("ui_left", "ui_right")
 		var up_down = Input.get_axis("ui_up", "ui_down")
 		
-		movement = Vector2(delta * speed * left_right, delta * speed * up_down)
+		movement = Vector2(floor(delta * speed * left_right), floor(delta * speed * up_down))
 		
 	get_parent().global_position += movement
 

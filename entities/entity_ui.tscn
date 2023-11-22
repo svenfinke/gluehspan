@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://big6kvsbfhqnp"]
+[gd_scene load_steps=11 format=3 uid="uid://big6kvsbfhqnp"]
 
 [ext_resource type="Theme" uid="uid://dsjo7yr5ushde" path="res://resources/default_theme.tres" id="1_xftgp"]
 [ext_resource type="PackedScene" uid="uid://bthkobb3mxjs2" path="res://components/entity_ui_loader_component.tscn" id="2_iud8h"]
@@ -7,35 +7,38 @@
 [ext_resource type="PackedScene" uid="uid://cpt36f8u0lpt1" path="res://entities/material_entry.tscn" id="5_4a65r"]
 [ext_resource type="Texture2D" uid="uid://dxrro5svwlasi" path="res://assets/kenney_tiny-ski/Tiles/tile_0081.png" id="6_akad8"]
 [ext_resource type="Texture2D" uid="uid://bjfvs6g40befv" path="res://assets/kenney_pixel-ui-pack/Spritesheet/UIpackSheet_transparent.png" id="7_4hdc2"]
+[ext_resource type="PackedScene" uid="uid://crdfb5wsqa14i" path="res://entities/marketplace_item_slot.tscn" id="7_c7iff"]
 [ext_resource type="PackedScene" uid="uid://q14ts1l2orcg" path="res://components/toggle_node_visibility_component.tscn" id="8_rinkl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h5u8h"]
 atlas = ExtResource("7_4hdc2")
 region = Rect2(199, 435, 14, 10)
 
-[node name="EntityUI" type="Control"]
+[node name="Control" type="Control"]
 texture_filter = 1
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
+anchor_left = 0.567
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 0.567
 anchor_bottom = 0.5
-offset_left = -133.5
-offset_top = -76.0
-offset_right = 133.5
-offset_bottom = 76.0
+offset_left = -128.64
+offset_top = -224.0
+offset_right = -128.64
+offset_bottom = -224.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(99, -5)
+size_flags_horizontal = 6
+size_flags_vertical = 6
 theme = ExtResource("1_xftgp")
 
 [node name="EntityUiLoaderComponent" parent="." instance=ExtResource("2_iud8h")]
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+custom_minimum_size = Vector2(200, 2.08165e-12)
+layout_mode = 2
+offset_right = 200.0
+offset_bottom = 172.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -139,6 +142,24 @@ texture = ExtResource("4_agc3w")
 layout_mode = 2
 text = "1"
 
+[node name="Marketplace" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Marketplace" type="Label" parent="PanelContainer/VBoxContainer/Marketplace"]
+layout_mode = 2
+text = "Selling Items"
+
+[node name="ItemSlots" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Marketplace"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ItemSlot" parent="PanelContainer/VBoxContainer/Marketplace/ItemSlots" instance=ExtResource("7_c7iff")]
+layout_mode = 2
+
 [node name="Production" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -170,13 +191,18 @@ layout_mode = 2
 text = "1 / Second"
 
 [node name="Close" type="Button" parent="."]
+custom_minimum_size = Vector2(12, 12)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -8.0
-offset_bottom = 8.0
+offset_left = 188.0
+offset_top = 1.0
+offset_right = 200.0
+offset_bottom = 13.0
 grow_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 focus_mode = 0
 theme_type_variation = &"CloseButton"
 

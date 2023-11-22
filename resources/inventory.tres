@@ -8,7 +8,7 @@
 [sub_resource type="Resource" id="Resource_plqr1"]
 script = ExtResource("1_2vwj7")
 name = "money"
-in_stock = 200
+in_stock = 0
 texture = ExtResource("2_p5wlp")
 base_price = 1.0
 
@@ -21,7 +21,7 @@ script = ExtResource("1_2vwj7")
 name = "iron_ore"
 in_stock = 0
 texture = SubResource("AtlasTexture_wx5um")
-base_price = 5.0
+base_price = 70.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7m8xk"]
 atlas = ExtResource("3_iowll")
@@ -32,7 +32,7 @@ script = ExtResource("1_2vwj7")
 name = "iron_ingot"
 in_stock = 0
 texture = SubResource("AtlasTexture_7m8xk")
-base_price = 50.0
+base_price = 700.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r4e8u"]
 atlas = ExtResource("3_iowll")
@@ -87,7 +87,7 @@ script = ExtResource("1_2vwj7")
 name = "brass_ingot"
 in_stock = 0
 texture = SubResource("AtlasTexture_olqh6")
-base_price = 30.0
+base_price = 600.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhtvb"]
 atlas = ExtResource("3_iowll")
@@ -98,7 +98,7 @@ script = ExtResource("1_2vwj7")
 name = "steel_ingot"
 in_stock = 0
 texture = SubResource("AtlasTexture_xhtvb")
-base_price = 100.0
+base_price = 2000.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mo3ft"]
 atlas = ExtResource("3_iowll")
@@ -131,7 +131,7 @@ script = ExtResource("1_2vwj7")
 name = "silver_ingot"
 in_stock = 0
 texture = SubResource("AtlasTexture_1ia5w")
-base_price = 500.0
+base_price = 5000.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6fxeq"]
 atlas = ExtResource("3_iowll")
@@ -142,7 +142,7 @@ script = ExtResource("1_2vwj7")
 name = "gold_ore"
 in_stock = 0
 texture = SubResource("AtlasTexture_6fxeq")
-base_price = 500.0
+base_price = 1000.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qgaje"]
 atlas = ExtResource("3_iowll")
@@ -153,8 +153,8 @@ script = ExtResource("1_2vwj7")
 name = "gold_ingot"
 in_stock = 0
 texture = SubResource("AtlasTexture_qgaje")
-base_price = 500.0
+base_price = 10000.0
 
 [resource]
 script = ExtResource("1_rkxys")
-items = Array[ExtResource("1_2vwj7")]([SubResource("Resource_plqr1"), SubResource("Resource_5byio"), SubResource("Resource_qdwgl"), SubResource("Resource_m1814"), SubResource("Resource_4qcxr"), SubResource("Resource_dhx7v"), SubResource("Resource_4pnyk"), SubResource("Resource_kdy7u"), SubResource("Resource_vanh4"), SubResource("Resource_o4k1p"), SubResource("Resource_vu17p"), SubResource("Resource_eiy5j"), SubResource("Resource_ckj6g"), SubResource("Resource_se8ss")])
+items = [SubResource("Resource_plqr1"), SubResource("Resource_5byio"), SubResource("Resource_qdwgl"), SubResource("Resource_m1814"), SubResource("Resource_4qcxr"), SubResource("Resource_dhx7v"), SubResource("Resource_4pnyk"), SubResource("Resource_kdy7u"), SubResource("Resource_vanh4"), SubResource("Resource_o4k1p"), SubResource("Resource_vu17p"), SubResource("Resource_eiy5j"), SubResource("Resource_ckj6g"), SubResource("Resource_se8ss")]

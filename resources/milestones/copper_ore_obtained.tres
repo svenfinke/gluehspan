@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Milestone" load_steps=4 format=3 uid="uid://csycauqg5ba73"]
+
+[ext_resource type="Script" path="res://classes/milestoneCondition.gd" id="1_4en4u"]
+[ext_resource type="Script" path="res://classes/milestone.gd" id="1_jkrij"]
+
+[sub_resource type="Resource" id="Resource_rlgex"]
+script = ExtResource("1_4en4u")
+type = 0
+item_name = "copper_ore"
+value = 1
+state = false
+
+[resource]
+script = ExtResource("1_jkrij")
+name = "copper_ore_obtained"
+conditions = [SubResource("Resource_rlgex")]
+achieved = false

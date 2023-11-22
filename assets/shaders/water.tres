@@ -1,0 +1,29 @@
+[gd_resource type="VisualShader" load_steps=2 format=3 uid="uid://dd75ulaf7wvxo"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_ss7rw"]
+input_name = "color"
+
+[resource]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+
+
+
+void fragment() {
+// Input:2
+	vec4 n_out2p0 = COLOR;
+
+
+// Output:0
+	COLOR.rgb = vec3(n_out2p0.xyz);
+
+
+}
+"
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(1820, 180)
+nodes/fragment/2/node = SubResource("VisualShaderNodeInput_ss7rw")
+nodes/fragment/2/position = Vector2(140, 160)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0)

@@ -1,8 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cp4yn4tpj75cs"]
+[gd_scene load_steps=4 format=3 uid="uid://cp4yn4tpj75cs"]
 
 [ext_resource type="Script" path="res://components/upgradeable_component.gd" id="1_l4s51"]
 [ext_resource type="Resource" uid="uid://debwxhtv0aaxx" path="res://resources/inventory.tres" id="2_4lter"]
+[ext_resource type="Resource" uid="uid://ce2xqv4jr245p" path="res://resources/milestone_manager.tres" id="3_3550o"]
 
 [node name="UpgradeableComponent" type="Node"]
 script = ExtResource("1_l4s51")
 inventory = ExtResource("2_4lter")
+milestones = ExtResource("3_3550o")

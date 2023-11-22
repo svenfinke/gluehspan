@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Milestone" load_steps=4 format=3 uid="uid://c7dpaj1750aqf"]
+
+[ext_resource type="Script" path="res://classes/milestoneCondition.gd" id="1_bg8g5"]
+[ext_resource type="Script" path="res://classes/milestone.gd" id="1_w26vp"]
+
+[sub_resource type="Resource" id="Resource_crjly"]
+script = ExtResource("1_bg8g5")
+type = 0
+item_name = "steel_ingot"
+value = 1
+state = false
+
+[resource]
+script = ExtResource("1_w26vp")
+name = "steel_ingot_obtained"
+conditions = [SubResource("Resource_crjly")]
+achieved = false

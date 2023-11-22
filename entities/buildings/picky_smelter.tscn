@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://dgjrh0b8lkb7h"]
+
+[ext_resource type="TileSet" uid="uid://eba87q6e1trb" path="res://assets/tiny.tres" id="1_tu1k5"]
+[ext_resource type="PackedScene" uid="uid://d31jvtxihgnms" path="res://components/crafting_component.tscn" id="2_t1ekc"]
+[ext_resource type="Resource" uid="uid://cefux8i536r3p" path="res://resources/recipe/copper_ingot.tres" id="3_ik5um"]
+[ext_resource type="PackedScene" uid="uid://cp4yn4tpj75cs" path="res://components/upgradeable_component.tscn" id="3_j8j17"]
+[ext_resource type="Resource" uid="uid://be4qgc50db1vs" path="res://resources/recipe/zinc_ingot.tres" id="4_2jtn4"]
+[ext_resource type="PackedScene" uid="uid://cye2t304c5ntj" path="res://components/open_entity_ui_component.tscn" id="5_0506o"]
+[ext_resource type="Resource" uid="uid://csycauqg5ba73" path="res://resources/milestones/copper_ore_obtained.tres" id="6_k8xnd"]
+[ext_resource type="PackedScene" uid="uid://cel4nbymoiovo" path="res://components/flag_component.tscn" id="9_mk5a1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1q7nx"]
+
+[node name="Picky Smelter" type="Node2D"]
+texture_filter = 1
+metadata/Name = "Picky Smelter"
+
+[node name="Tier1" type="TileMap" parent="."]
+tile_set = ExtResource("1_tu1k5")
+format = 2
+layer_0/tile_data = PackedInt32Array(-196612, 1, 1, -131076, 1, 2, -65540, 1, 3, -262147, 1, 1, -196611, 196609, 3, -131075, 65537, 2, -65539, 393217, 3, -3, 1, 2, 65533, 1, 3, -262146, 65537, 1, -196610, 65537, 2, -131074, 65537, 2, -65538, 65537, 2, -2, 65537, 2, 65534, 393217, 3, -262145, 65537, 1, -196609, 65537, 2, -131073, 65537, 2, -65537, 65537, 2, 65535, 65537, 2, 131071, 65537, 3, -327680, 65537, 1, -262144, 65537, 2, -196608, 65537, 2, -131072, 65537, 2, 0, 65537, 2, 65536, 65537, 3, -262143, 65537, 2, -196607, 65537, 2, -131071, 65537, 2, -65535, 65537, 2, 1, 65537, 2, 65537, 65537, 3, -196606, 65537, 2, -131070, 65537, 2, -65534, 65537, 2, 2, 65537, 2, 65538, 65537, 3, -131069, 131073, 2, -65533, 262145, 3, 3, 327681, 3, -1, 65537, 2, -65536, 65537, 2, 65532, 1, 0, -4, 1, 0, -65541, 1, 0, -131077, 1, 0, -196613, 1, 0, -262149, 1, 0, -262148, 1, 0, -327683, 1, 0, -327682, 1, 0, -327681, 1, 0, -393216, 1, 0, -327678, 131073, 1, -393214, 1, 0, -327677, 1, 0, -262141, 131073, 1, -262140, 1, 0, -196604, 1, 0, -131068, 65537, 0, 5, 1, 0, 65541, 1, 0, 65540, 1, 0, 131074, 1, 0, 131073, 65537, 0, 131072, 1, 0, 196607, 1, 0, 196606, 1, 0, 196605, 1, 0, 131069, 1, 0, 131070, 1, 3, 65539, 131073, 3, 4, 131073, 3, -65532, 131073, 1, -196605, 131073, 2, -262142, 262145, 3, -327679, 65537, 1)
+layer_1/name = ""
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(-65536, 1, 6, -65535, 65537, 7, -65534, 196609, 6, -196608, 1, 4, -131072, 1, 5, -196606, 131073, 4, -131070, 131073, 5, -196607, 65537, 4, -131071, 196609, 5, -65538, 262145, 6, -65537, 262145, 7, -196610, 262145, 4, -131074, 262145, 5, -196609, 458753, 4, -131073, 327681, 5, -262144, 327681, 4, -262143, 393217, 4, -1, 196608, 5, 2, 131072, 6, 0, 1048578, 0, -65533, 131076, 0)
+
+[node name="Tier0" type="TileMap" parent="."]
+visible = false
+tile_set = ExtResource("1_tu1k5")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65536, 1048578, 0)
+
+[node name="AreaTier1" type="Area2D" parent="."]
+visible = false
+position = Vector2(7, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTier1"]
+shape = SubResource("RectangleShape2D_1q7nx")
+
+[node name="AreaTier0" type="Area2D" parent="."]
+position = Vector2(7, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTier0"]
+shape = SubResource("RectangleShape2D_1q7nx")
+
+[node name="CraftingComponent" parent="." node_paths=PackedStringArray("upgradeable_component") instance=ExtResource("2_t1ekc")]
+position = Vector2(5, -57)
+base_production_per_second_per_level = Array[float]([0.0, 1.0, 2.0])
+upgradeable_component = NodePath("../UpgradeableComponent")
+recipes = Array[Resource("res://classes/recipe.gd")]([ExtResource("3_ik5um"), ExtResource("4_2jtn4")])
+produced_item = "copper_ingot"
+
+[node name="UpgradeableComponent" parent="." instance=ExtResource("3_j8j17")]
+max_level = 2
+upgrade_cost_per_level = Array[int]([30, 150])
+level_to_tier_reference = Array[int]([0, 1, 1])
+milestone_required_per_level = Array[Resource("res://classes/milestone.gd")]([ExtResource("6_k8xnd")])
+
+[node name="OpenEntityUiComponent" parent="." instance=ExtResource("5_0506o")]
+
+[node name="FlagComponent" parent="." node_paths=PackedStringArray("upgradeable_component") instance=ExtResource("9_mk5a1")]
+upgradeable_component = NodePath("../UpgradeableComponent")
+flags = Array[Vector2]([Vector2(2.08165e-12, -1), Vector2(0, 0)])

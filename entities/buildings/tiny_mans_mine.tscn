@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://d14r8c7purdf3"]
+
+[ext_resource type="PackedScene" uid="uid://cys6ebkb1bqdg" path="res://components/production_component.tscn" id="1_xupnw"]
+[ext_resource type="TileSet" uid="uid://eba87q6e1trb" path="res://assets/tiny.tres" id="2_1pwg3"]
+[ext_resource type="PackedScene" uid="uid://cp4yn4tpj75cs" path="res://components/upgradeable_component.tscn" id="3_3s0tf"]
+[ext_resource type="PackedScene" uid="uid://cye2t304c5ntj" path="res://components/open_entity_ui_component.tscn" id="5_gfhj6"]
+[ext_resource type="PackedScene" uid="uid://cel4nbymoiovo" path="res://components/flag_component.tscn" id="6_of1v5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lh3ae"]
+
+[node name="Tiny Mans Mine" type="Node2D"]
+texture_filter = 1
+metadata/Name = "Tiny Mans Mine"
+
+[node name="Tier0" type="TileMap" parent="."]
+tile_set = ExtResource("2_1pwg3")
+format = 2
+layer_0/name = "Background"
+layer_1/name = "Buildings"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(-3, 65537, 6, -2, 1, 7, -1, 65537, 7, -65536, 196609, 6, -4, 1, 6, -65540, 1, 5, -131072, 131073, 5, -65539, 65537, 5, -65538, 65537, 5, -65537, 65537, 5, -131076, 1, 4, -131075, 196609, 4, -131074, 65537, 4, -131073, 65537, 4, -196608, 131073, 4, 65536, 458753, 8, 65537, 458753, 9, -5, 589825, 4, 65533, 1048578, 2)
+
+[node name="AreaTier0" type="Area2D" parent="."]
+visible = false
+position = Vector2(-40, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTier0"]
+shape = SubResource("RectangleShape2D_lh3ae")
+
+[node name="ProductionComponent" parent="." node_paths=PackedStringArray("upgradeable_component") instance=ExtResource("1_xupnw")]
+position = Vector2(-22, -30)
+produced_item = "copper_ore"
+base_production_per_second_per_level = Array[float]([1.0, 2.0, 2.0])
+upgradeable_component = NodePath("../UpgradeableComponent")
+
+[node name="UpgradeableComponent" parent="." instance=ExtResource("3_3s0tf")]
+max_level = 2
+upgrade_cost_per_level = Array[int]([10, 50])
+level_to_tier_reference = Array[int]([0, 0, 0])
+
+[node name="OpenEntityUiComponent" parent="." instance=ExtResource("5_gfhj6")]
+
+[node name="FlagComponent" parent="." node_paths=PackedStringArray("upgradeable_component") instance=ExtResource("6_of1v5")]
+upgradeable_component = NodePath("../UpgradeableComponent")
+flags = Array[Vector2]([Vector2(-3, 2.08165e-12)])

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Milestone" load_steps=4 format=3 uid="uid://b086lkvgtr562"]
+
+[ext_resource type="Script" path="res://classes/milestone.gd" id="1_b4uaw"]
+[ext_resource type="Script" path="res://classes/milestoneCondition.gd" id="1_ulv5h"]
+
+[sub_resource type="Resource" id="Resource_bxadb"]
+script = ExtResource("1_ulv5h")
+type = 0
+item_name = "money"
+value = 1
+state = false
+
+[resource]
+script = ExtResource("1_b4uaw")
+name = "money_obtained"
+conditions = [SubResource("Resource_bxadb")]
+achieved = false

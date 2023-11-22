@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cel4nbymoiovo"]
+
+[ext_resource type="Script" path="res://components/flag_component.gd" id="1_a2yps"]
+
+[node name="FlagComponent" type="Node"]
+script = ExtResource("1_a2yps")

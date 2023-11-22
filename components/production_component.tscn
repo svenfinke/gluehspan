@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" path="res://components/production_component.gd" id="1_7o1pn"]
 [ext_resource type="Resource" uid="uid://debwxhtv0aaxx" path="res://resources/inventory.tres" id="2_2v1yc"]
-[ext_resource type="Texture2D" uid="uid://dmk32gqvkdmvm" path="res://assets/kenney_tiny-ski/Tiles/tile_0083.png" id="3_5fx5h"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_buamo"]
 
 [sub_resource type="Gradient" id="Gradient_qdrvp"]
 offsets = PackedFloat32Array(0.553792, 0.999118)
@@ -17,7 +18,7 @@ emitting = false
 amount = 1
 lifetime = 0.5
 one_shot = true
-texture = ExtResource("3_5fx5h")
+texture = SubResource("CompressedTexture2D_buamo")
 direction = Vector2(2.08165e-12, -1)
 spread = 13.49
 gravity = Vector2(2.08165e-12, 2.08165e-12)

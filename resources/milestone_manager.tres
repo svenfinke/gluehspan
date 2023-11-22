@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="MilestoneManager" load_steps=17 format=3 uid="uid://ce2xqv4jr245p"]
+
+[ext_resource type="Script" path="res://classes/milestoneManager.gd" id="1_6jc7s"]
+[ext_resource type="Resource" uid="uid://c17ainf11ylo0" path="res://resources/milestones/iron_ore_obtained.tres" id="1_qg81f"]
+[ext_resource type="Resource" uid="uid://by4stl81ji7gp" path="res://resources/milestones/iron_ingot_obtained.tres" id="2_lgh6j"]
+[ext_resource type="Resource" uid="uid://csycauqg5ba73" path="res://resources/milestones/copper_ore_obtained.tres" id="3_0ie74"]
+[ext_resource type="Resource" uid="uid://chnm0lmj08tyf" path="res://resources/milestones/copper_ingot_obtained.tres" id="4_dr1hd"]
+[ext_resource type="Resource" uid="uid://ce53cyk73x566" path="res://resources/milestones/zinc_ore_obtained.tres" id="5_xmbt6"]
+[ext_resource type="Resource" uid="uid://62wdnsm6e8ry" path="res://resources/milestones/zinc_ingot_obtained.tres" id="6_tuhlp"]
+[ext_resource type="Resource" uid="uid://cdvwdnw4j0exi" path="res://resources/milestones/brass_ingot_obtained.tres" id="7_hoqkq"]
+[ext_resource type="Resource" uid="uid://c7dpaj1750aqf" path="res://resources/milestones/steel_ingot_obtained.tres" id="8_hgcu0"]
+[ext_resource type="Resource" uid="uid://7pnjfl7g52ac" path="res://resources/milestones/coal_obtained.tres" id="9_u85cc"]
+[ext_resource type="Resource" uid="uid://bs4ejwg6mhwdu" path="res://resources/milestones/silver_ore_obtained.tres" id="10_pha1c"]
+[ext_resource type="Resource" uid="uid://bt23j722kuqsx" path="res://resources/milestones/silver_ingot_obtained.tres" id="11_sg6ef"]
+[ext_resource type="Resource" uid="uid://dxre3fc6lf7ew" path="res://resources/milestones/gold_ore_obtained.tres" id="12_yiv8q"]
+[ext_resource type="Resource" uid="uid://djbbmwseuwie5" path="res://resources/milestones/gold_ingot_obtained.tres" id="13_0kjbg"]
+[ext_resource type="Resource" uid="uid://cppg7auhja708" path="res://resources/milestones/basic_copper_production.tres" id="14_2xp4s"]
+[ext_resource type="Resource" uid="uid://b086lkvgtr562" path="res://resources/milestones/money_obtained.tres" id="15_c77uf"]
+
+[resource]
+script = ExtResource("1_6jc7s")
+milestones = [ExtResource("1_qg81f"), ExtResource("2_lgh6j"), ExtResource("3_0ie74"), ExtResource("4_dr1hd"), ExtResource("5_xmbt6"), ExtResource("6_tuhlp"), ExtResource("7_hoqkq"), ExtResource("8_hgcu0"), ExtResource("9_u85cc"), ExtResource("10_pha1c"), ExtResource("11_sg6ef"), ExtResource("12_yiv8q"), ExtResource("13_0kjbg"), ExtResource("14_2xp4s"), ExtResource("15_c77uf")]

@@ -1,6 +1,7 @@
 extends Node
 
 var material_entry: PackedScene = preload("res://entities/material_entry.tscn")
+var marketplace_item_slot: PackedScene = preload("res://entities/marketplace_item_slot.tscn")
 
 var parent: Control
 var current_recipe_index: int:
@@ -26,7 +27,6 @@ var current_recipe_index: int:
 		
 		parent.get_node("%Products").find_child("Texture").texture = crafting_component.inventory.get_item(recipe.produced_item).texture
 	
-
 var has_crafting: bool = false:
 	set(value):
 		has_crafting = value
@@ -37,6 +37,12 @@ var has_crafting: bool = false:
 			return
 		
 		var crafting_component = current_entity.find_child("CraftingComponent")
+		var level = crafting_component.upgradeable_component.level
+		
+		if crafting_component.base_production_per_second_per_level[level] <= 0.01:
+			crafting.visible = false
+			return
+		
 		var index = 0
 		for recipe in crafting_component.recipes:
 			if recipe.produced_item == crafting_component.produced_item:
@@ -57,6 +63,11 @@ var has_production: bool = false:
 		
 		var production_component = current_entity.find_child("ProductionComponent")
 		var level = production_component.upgradeable_component.level
+		
+		if production_component.base_production_per_second_per_level[level] <= 0.01:
+			production.visible = false
+			return
+		
 		var production_per_minute = production_component.base_production_per_second_per_level[level] * 60
 		parent.find_child("ProduceLabel").text = str(production_per_minute) + " / minute"
 		
@@ -81,6 +92,30 @@ var has_updates: bool = false:
 		var cost: int = upgradeable_component.upgrade_cost_per_level[upgradeable_component.level]
 		upgrades.get_node("%UpgradeCost").text = str(cost)
 
+var has_marketplace: bool = false:
+	set(value):
+		has_marketplace = value
+		var marketplace = parent.get_node("%Marketplace")
+		marketplace.visible = value
+		
+		if not value:
+			return
+		
+		var merchant_component = current_entity.find_child("MerchantComponent")
+		var item_slots = marketplace.find_child("ItemSlots")
+		for item_slot in item_slots.get_children():
+			item_slot.queue_free()
+		
+		var i = 0
+		for sell_item_slot in merchant_component.sell_item_slots:
+			var entry = marketplace_item_slot.instantiate()
+			var rotate_item_component = entry.find_child("RotateItemComponent")
+			rotate_item_component.slot_index = i
+			rotate_item_component.merchant_component = merchant_component
+			rotate_item_component.current_item = sell_item_slot
+			item_slots.add_child(entry)
+			i += 1
+
 var current_entity: Node2D:
 	set(value):
 		current_entity = value
@@ -88,14 +123,14 @@ var current_entity: Node2D:
 		has_updates = value.has_node("UpgradeableComponent")
 		has_crafting = value.has_node("CraftingComponent")
 		has_production = value.has_node("ProductionComponent")
+		has_marketplace = value.has_node("MerchantComponent")
 
 func _ready() -> void:
 	parent = get_parent()
 	parent.visible = false
 	
 	UiEventBus.open_entity_ui.connect(open)
-	parent.get_node("%UpgradeButton").pressed.connect(upgrade)
-	
+	parent.get_node("%UpgradeButton").pressed.connect(upgrade)	
 	parent.get_node("%RotateRecipes").pressed.connect(next_recipe)
 
 func open(entity: Node2D) -> void:
