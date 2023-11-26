@@ -53,13 +53,13 @@ shape = SubResource("RectangleShape2D_lh3ae")
 [node name="ProductionComponent" parent="." node_paths=PackedStringArray("upgradeable_component") instance=ExtResource("2_thfwq")]
 position = Vector2(9, -43)
 produced_item = "zinc_ore"
-base_production_per_second_per_level = Array[float]([2.08165e-12, 1.0, 2.0, 4.0])
+base_production_per_second_per_level = Array[float]([2.08165e-12, 1.0, 2.0, 4.0, 8.0])
 upgradeable_component = NodePath("../UpgradeableComponent")
 
 [node name="UpgradeableComponent" parent="." instance=ExtResource("3_fws68")]
-max_level = 2
-upgrade_cost_per_level = Array[int]([150, 400, 750])
-level_to_tier_reference = Array[int]([0, 1, 1])
+max_level = 4
+upgrade_cost_per_level = Array[int]([100, 200, 350, 600, 1000])
+level_to_tier_reference = Array[int]([0, 1, 1, 1, 1])
 milestone_required_per_level = Array[Resource("res://classes/milestone.gd")]([ExtResource("4_6y2lv")])
 
 [node name="OpenEntityUiComponent" parent="." instance=ExtResource("5_paxpl")]

@@ -13,5 +13,5 @@ state = false
 [resource]
 script = ExtResource("1_b4uaw")
 name = "money_obtained"
-conditions = [SubResource("Resource_bxadb")]
+conditions = Array[ExtResource("1_ulv5h")]([SubResource("Resource_bxadb")])
 achieved = false

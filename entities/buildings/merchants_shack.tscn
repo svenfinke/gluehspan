@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://d33djidenj1p0"]
+[gd_scene load_steps=7 format=3 uid="uid://d33djidenj1p0"]
 
 [ext_resource type="TileSet" uid="uid://eba87q6e1trb" path="res://assets/tiny.tres" id="1_jo01e"]
 [ext_resource type="PackedScene" uid="uid://bsb6blqs8lxl0" path="res://components/merchant_component.tscn" id="2_x8cxf"]
 [ext_resource type="PackedScene" uid="uid://cye2t304c5ntj" path="res://components/open_entity_ui_component.tscn" id="3_ibooa"]
 [ext_resource type="PackedScene" uid="uid://cel4nbymoiovo" path="res://components/flag_component.tscn" id="4_6ug2w"]
+[ext_resource type="PackedScene" uid="uid://cp4yn4tpj75cs" path="res://components/upgradeable_component.tscn" id="5_ttfma"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kt7la"]
 
@@ -16,10 +17,11 @@ tile_set = ExtResource("1_jo01e")
 format = 2
 layer_0/tile_data = PackedInt32Array(-7, 196608, 5, -65542, 196608, 5, -6, 196608, 6, -131077, 262145, 4, -65541, 262145, 5, -5, 262145, 6, -131076, 327681, 4, -65540, 458753, 5, -4, 262145, 7, -131075, 458753, 4, -65539, 327681, 5, -3, 327681, 6, -131074, 327681, 4, -65538, 458753, 5, -2, 262145, 7, -131073, 327681, 4, -65537, 327681, 5, -1, 393217, 7, -196608, 327681, 4, -131072, 327681, 5, -65536, 458753, 7, -196607, 393217, 4, -131071, 393217, 5, -65535, 458753, 6, 1, 1048578, 1, -196606, 589825, 3, -131070, 589825, 4, -65534, 589825, 3, -196605, 589825, 3, -131069, 327680, 7, -65533, 589825, 5, -196604, 655361, 3, -131068, 655361, 4, -65532, 655361, 5)
 
-[node name="MerchantComponent" parent="." instance=ExtResource("2_x8cxf")]
-sell_interval_in_seconds = 10.0
+[node name="MerchantComponent" parent="." node_paths=PackedStringArray("upgradeable_component") instance=ExtResource("2_x8cxf")]
+sell_interval_in_seconds_per_level = Array[float]([10.0])
 max_amount_per_sell = 10
 sell_item_slots = Array[String](["", ""])
+upgradeable_component = NodePath("../UpgradeableComponent")
 
 [node name="AreaTier0" type="Area2D" parent="."]
 position = Vector2(24, 8)
@@ -31,3 +33,8 @@ shape = SubResource("RectangleShape2D_kt7la")
 
 [node name="FlagComponent" parent="." instance=ExtResource("4_6ug2w")]
 flags = Array[Vector2]([Vector2(1, 2.08165e-12)])
+
+[node name="UpgradeableComponent" parent="." instance=ExtResource("5_ttfma")]
+position = Vector2(-214, -62)
+max_level = 0
+level_to_tier_reference = Array[int]([0])

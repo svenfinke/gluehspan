@@ -102,6 +102,11 @@ var has_marketplace: bool = false:
 			return
 		
 		var merchant_component = current_entity.find_child("MerchantComponent")
+		var upgradeable_component = current_entity.find_child("UpgradeableComponent")
+		if merchant_component.sell_interval_in_seconds_per_level[upgradeable_component.level] <= 0.1:
+			marketplace.visible = false
+			return
+		
 		var item_slots = marketplace.find_child("ItemSlots")
 		for item_slot in item_slots.get_children():
 			item_slot.queue_free()
@@ -151,3 +156,26 @@ func next_recipe() -> void:
 		current_recipe_index = 0
 		return
 	current_recipe_index += 1
+
+func _process(_delta) -> void:
+	if not parent.visible:
+		return
+	
+	var milestone_error := %Milestone_Error
+	var milestone_error_label := %Milestone_Error_Label
+	milestone_error.visible = false
+	milestone_error_label.visible = false
+	var upgrade_button := %UpgradeButton
+	upgrade_button.disabled = false
+	var upgradeable_component = current_entity.find_child("UpgradeableComponent")
+	if upgradeable_component != null and upgradeable_component.is_upgrade_available():
+		if upgradeable_component.is_upgrade_blocked_by_milestone():
+			var milestone : Milestone = upgradeable_component.return_current_milestone()
+			var milestone_name = milestone.name.replace("_", " ").capitalize()
+			milestone_error.visible = true
+			milestone_error_label.visible = true
+			milestone_error_label.text = "Milestone '" + milestone_name + "' is required!"
+			upgrade_button.disabled = true
+		
+		if not upgradeable_component.is_upgrade_affordable():
+			upgrade_button.disabled = true

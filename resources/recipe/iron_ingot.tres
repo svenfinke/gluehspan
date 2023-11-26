@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_c4jhv")
 materials = {
-"iron_ore": 10
+"iron_ore": 5
 }
 produced_item = "iron_ingot"
 production_speed_multiplier = 1.0

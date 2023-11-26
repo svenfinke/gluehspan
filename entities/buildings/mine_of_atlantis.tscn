@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://ftwg7ev25246"]
+
+[ext_resource type="TileSet" uid="uid://eba87q6e1trb" path="res://assets/tiny.tres" id="1_48p03"]
+[ext_resource type="PackedScene" uid="uid://cys6ebkb1bqdg" path="res://components/production_component.tscn" id="2_13mim"]
+[ext_resource type="PackedScene" uid="uid://cp4yn4tpj75cs" path="res://components/upgradeable_component.tscn" id="3_2ddd6"]
+[ext_resource type="Resource" uid="uid://bt23j722kuqsx" path="res://resources/milestones/silver_ingot_obtained.tres" id="4_1md3f"]
+[ext_resource type="PackedScene" uid="uid://cye2t304c5ntj" path="res://components/open_entity_ui_component.tscn" id="5_vedu0"]
+[ext_resource type="PackedScene" uid="uid://cel4nbymoiovo" path="res://components/flag_component.tscn" id="6_38aea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lh3ae"]
+
+[node name="Mine Of Atlantis" type="Node2D"]
+texture_filter = 1
+metadata/Name = "Mine Of Atlantis"
+
+[node name="Tier1" type="TileMap" parent="."]
+tile_set = ExtResource("1_48p03")
+format = 2
+layer_0/name = "Background"
+layer_1/name = "Buildings"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(65537, 1048578, 1, 65533, 4, 7, 65534, 65540, 7, 65535, 131076, 7, 65530, 4, 7, 65531, 65540, 7, 65532, 131076, 7, 0, 589824, 3, 1, 720896, 4, -65535, 720896, 4, 65529, 589824, 4, -7, 589824, 4, -6, 327680, 2, -1, 327680, 2, -5, 262144, 3, -4, 262144, 3, -3, 262144, 3, -2, 262144, 3, -65542, 131072, 0, -65541, 131072, 0, -65540, 131072, 0, -65539, 131072, 0, -65538, 131072, 0, -65537, 131072, 0, -131072, 131072, 0, -65533, 720896, 4, -131069, 720896, 4, -196605, 327680, 1, -131071, 327680, 1, -196607, 65536, 0, -196606, 131072, 0, -131070, 262144, 2, -65534, 262144, 3, -65543, 262144, 1, -131079, 196608, 1, -196615, 262144, 0, -196614, 131072, 2, -196613, 131072, 2, -196612, 131072, 2, -196611, 196608, 2, -262147, 262144, 0, -262146, 131072, 2, -262145, 131072, 2, -327680, 131072, 2, -327679, 131072, 2, -327678, 131072, 2, -327677, 327680, 0, -262141, 65536, 1, -262142, 0, 0, -262143, 0, 0, -262144, 0, 2, -196609, 0, 0, -196610, 0, 0, -131074, 0, 0, -131073, 0, 1, -196608, 0, 0, -131075, 0, 0, -131076, 0, 0, -131077, 0, 0, -131078, 0, 2, 131067, 589824, 7, 131070, 720896, 7, 131069, 589824, 5, 131068, 720896, 5, 196604, 589824, 6, 262140, 589824, 6, 196605, 589824, 6, 262141, 589824, 6, 327676, 524288, 5, 327677, 524288, 5, 196603, 524288, 4, 196606, 458752, 4, 131071, 327680, 7, 131066, 65540, 5, 2, 65540, 5, 3, 4, 5, -65536, 262144, 3)
+
+[node name="Tier0" type="TileMap" parent="."]
+visible = false
+tile_set = ExtResource("1_48p03")
+format = 2
+layer_0/name = "Background"
+layer_1/name = "Buildings"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(-65536, 1048578, 0)
+
+[node name="AreaTier0" type="Area2D" parent="."]
+position = Vector2(9, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTier0"]
+shape = SubResource("RectangleShape2D_lh3ae")
+
+[node name="AreaTier1" type="Area2D" parent="."]
+position = Vector2(24, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTier1"]
+shape = SubResource("RectangleShape2D_lh3ae")
+
+[node name="ProductionComponent" parent="." node_paths=PackedStringArray("upgradeable_component") instance=ExtResource("2_13mim")]
+position = Vector2(9, -43)
+produced_item = "gold_ore"
+base_production_per_second_per_level = Array[float]([2.08165e-12, 0.5, 1.0, 2.0])
+upgradeable_component = NodePath("../UpgradeableComponent")
+
+[node name="UpgradeableComponent" parent="." instance=ExtResource("3_2ddd6")]
+max_level = 3
+upgrade_cost_per_level = Array[int]([1500, 2000, 2500, 5000])
+level_to_tier_reference = Array[int]([0, 1, 1, 1])
+milestone_required_per_level = Array[Resource("res://classes/milestone.gd")]([ExtResource("4_1md3f")])
+
+[node name="OpenEntityUiComponent" parent="." instance=ExtResource("5_vedu0")]
+
+[node name="FlagComponent" parent="." node_paths=PackedStringArray("upgradeable_component") instance=ExtResource("6_38aea")]
+upgradeable_component = NodePath("../UpgradeableComponent")
+flags = Array[Vector2]([Vector2(2.08165e-12, -1), Vector2(1, 1)])

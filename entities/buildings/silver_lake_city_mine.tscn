@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsy4ydfc2u4nb"]
+
+[ext_resource type="TileSet" uid="uid://eba87q6e1trb" path="res://assets/tiny.tres" id="1_wvjbo"]
+[ext_resource type="PackedScene" uid="uid://cys6ebkb1bqdg" path="res://components/production_component.tscn" id="2_p1wsh"]
+[ext_resource type="PackedScene" uid="uid://cp4yn4tpj75cs" path="res://components/upgradeable_component.tscn" id="3_6sg0m"]
+[ext_resource type="Resource" uid="uid://c7dpaj1750aqf" path="res://resources/milestones/steel_ingot_obtained.tres" id="4_ppdif"]
+[ext_resource type="PackedScene" uid="uid://cye2t304c5ntj" path="res://components/open_entity_ui_component.tscn" id="5_b5vjl"]
+[ext_resource type="PackedScene" uid="uid://cel4nbymoiovo" path="res://components/flag_component.tscn" id="6_w2ct1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lh3ae"]
+
+[node name="Silver Lake City Mine" type="Node2D"]
+texture_filter = 1
+metadata/Name = "Silver Lake City Mine"
+
+[node name="Tier1" type="TileMap" parent="."]
+tile_set = ExtResource("1_wvjbo")
+format = 2
+layer_0/name = "Background"
+layer_0/tile_data = PackedInt32Array(-393219, 2, 5, -327683, 65538, 2, -262147, 65538, 2, -196611, 131074, 5, -131075, 131074, 2, -65539, 131074, 2, -3, 65538, 5, 65533, 65538, 2, 131069, 65538, 2, 196605, 65538, 2, 262141, 65538, 2, -393218, 65538, 2, -327682, 65538, 2, -262146, 65538, 2, -196610, 65538, 3, -131074, 1, 0, -65538, 1, 0, -2, 65538, 1, 65534, 65538, 2, 131070, 65538, 2, 196606, 65538, 2, 262142, 65538, 2, -393217, 65538, 2, -327681, 65538, 2, -262145, 65538, 2, -196609, 65538, 3, -131073, 65537, 0, -65537, 131074, 0, -1, 131074, 1, 65535, 131074, 2, 131071, 131074, 2, 196607, 65538, 5, 262143, 65538, 2, -458752, 131074, 5, -393216, 131074, 2, -327680, 131074, 2, -262144, 131074, 3, -196608, 1, 0, -131072, 1, 0, -65536, 1, 0, 0, 1, 0, 65536, 1, 0, 131072, 65538, 1, 196608, 65538, 2, -458751, 65538, 3, -393215, 1, 0, -327679, 1, 0, -262143, 1, 0, -196607, 1, 0, -131071, 1, 0, -65535, 1, 0, 1, 1, 0, 65537, 1, 0, 131073, 65538, 1, 196609, 65538, 2, -458750, 65538, 3, -393214, 1, 0, -327678, 1, 0, -262142, 1, 0, -196606, 1, 0, -131070, 1, 0, -65534, 1, 0, 2, 1, 0, 65538, 1, 0, 131074, 131074, 1, 196610, 65538, 5, -458749, 65538, 3, -393213, 1, 0, -327677, 1, 0, -262141, 1, 0, -196605, 1, 0, -131069, 1, 0, -65533, 1, 0, 3, 1, 0, 65539, 1, 0, 131075, 1, 0, 196611, 65538, 1, -458748, 196610, 5, -393212, 2, 3, -327676, 131074, 0, -262140, 1, 0, -196604, 1, 0, -131068, 1, 0, -65532, 1, 0, 4, 1, 0, 65540, 1, 0, 131076, 1, 0, 196612, 65538, 1, -458747, 65538, 2, -393211, 65538, 3, -327675, 1, 0, -262139, 1, 0, -196603, 1, 0, -131067, 1, 0, -65531, 1, 0, 5, 1, 0, 65541, 1, 0, 131077, 1, 0, 196613, 65538, 1, -458746, 65538, 2, -393210, 65538, 3, -327674, 1, 0, -262138, 1, 0, -196602, 1, 0, -131066, 1, 0, -65530, 1, 0, 6, 1, 0, 65542, 1, 0, 131078, 2, 1, 196614, 2, 5, -458745, 65538, 2, -393209, 196610, 5, -327673, 2, 3, -262137, 1, 0, -196601, 1, 0, -131065, 1, 0, -65529, 1, 0, 7, 1, 0, 65543, 2, 1, 131079, 2, 5, 196615, 65538, 2, -458744, 65538, 2, -393208, 65538, 2, -327672, 196610, 5, -262136, 2, 2, -196600, 2, 2, -131064, 2, 2, -65528, 2, 2, 8, 2, 2, 65544, 2, 5, 131080, 65538, 2, 196616, 65538, 2)
+layer_1/name = "Buildings"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(65537, 1048578, 1, 0, 262145, 6, 1, 262145, 7, 2, 327681, 7, 3, 458753, 6, -65534, 458753, 5, -65535, 327681, 5, -65533, 393217, 5, -131072, 262145, 4, -65536, 262145, 5, -131070, 327681, 4, -131069, 393217, 4, -131071, 458753, 4, -65532, 4, 7, -65531, 65540, 7, -65530, 131076, 7, -65529, 720896, 4, -131068, 262144, 3, -131067, 262144, 3, -131066, 262144, 3, -131065, 720896, 4, -196602, 131072, 0, -196603, 131072, 0, -196604, 131072, 0, -196605, 131072, 0, -196606, 131072, 0, -196607, 262144, 1, -262143, 262144, 0, -262142, 131072, 2, -262141, 131072, 2, -262140, 131072, 2, -262139, 131072, 2, -262138, 131072, 2, -262137, 327680, 0, -196601, 327680, 1, 5, 720896, 6, 65541, 524288, 5, 4, 524288, 4, -65538, 327681, 0, -458751, 196609, 0, -393215, 196609, 1, 7, 327681, 2, 131075, 327681, 1)
+
+[node name="Tier0" type="TileMap" parent="."]
+visible = false
+tile_set = ExtResource("1_wvjbo")
+format = 2
+layer_0/name = "Background"
+layer_1/name = "Buildings"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(-65536, 1048578, 0)
+
+[node name="AreaTier0" type="Area2D" parent="."]
+visible = false
+position = Vector2(9, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTier0"]
+shape = SubResource("RectangleShape2D_lh3ae")
+
+[node name="AreaTier1" type="Area2D" parent="."]
+visible = false
+position = Vector2(24, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTier1"]
+shape = SubResource("RectangleShape2D_lh3ae")
+
+[node name="ProductionComponent" parent="." node_paths=PackedStringArray("upgradeable_component") instance=ExtResource("2_p1wsh")]
+position = Vector2(9, -43)
+produced_item = "silver_ore"
+base_production_per_second_per_level = Array[float]([2.08165e-12, 0.5, 1.0, 2.0, 3.0])
+upgradeable_component = NodePath("../UpgradeableComponent")
+
+[node name="UpgradeableComponent" parent="." instance=ExtResource("3_6sg0m")]
+max_level = 3
+upgrade_cost_per_level = Array[int]([1500, 2500, 4000, 7500])
+level_to_tier_reference = Array[int]([0, 1, 1, 1])
+milestone_required_per_level = Array[Resource("res://classes/milestone.gd")]([ExtResource("4_ppdif")])
+
+[node name="OpenEntityUiComponent" parent="." instance=ExtResource("5_b5vjl")]
+
+[node name="FlagComponent" parent="." node_paths=PackedStringArray("upgradeable_component") instance=ExtResource("6_w2ct1")]
+upgradeable_component = NodePath("../UpgradeableComponent")
+flags = Array[Vector2]([Vector2(2.08165e-12, -1), Vector2(1, 1)])

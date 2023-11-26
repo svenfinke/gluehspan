@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://eba87q6e1trb" path="res://assets/tiny.tres" id="1_pbehf"]
 [ext_resource type="PackedScene" uid="uid://cys6ebkb1bqdg" path="res://components/production_component.tscn" id="2_0o0de"]
 [ext_resource type="PackedScene" uid="uid://cp4yn4tpj75cs" path="res://components/upgradeable_component.tscn" id="3_41jaa"]
-[ext_resource type="Resource" uid="uid://cppg7auhja708" path="res://resources/milestones/basic_copper_production.tres" id="4_e0n5b"]
+[ext_resource type="Resource" uid="uid://cdvwdnw4j0exi" path="res://resources/milestones/brass_ingot_obtained.tres" id="4_6gvpt"]
 [ext_resource type="PackedScene" uid="uid://cye2t304c5ntj" path="res://components/open_entity_ui_component.tscn" id="5_pcnb4"]
 [ext_resource type="PackedScene" uid="uid://cel4nbymoiovo" path="res://components/flag_component.tscn" id="7_u80ax"]
 
@@ -11,7 +11,7 @@
 
 [node name="Shallow Iron Mine" type="Node2D"]
 texture_filter = 1
-metadata/Name = "Old Zinc Mine"
+metadata/Name = "Shallow Iron Mine"
 
 [node name="Tier1" type="TileMap" parent="."]
 tile_set = ExtResource("1_pbehf")
@@ -58,9 +58,9 @@ upgradeable_component = NodePath("../UpgradeableComponent")
 
 [node name="UpgradeableComponent" parent="." instance=ExtResource("3_41jaa")]
 max_level = 2
-upgrade_cost_per_level = Array[int]([500, 750, 1500])
+upgrade_cost_per_level = Array[int]([350, 750, 1500])
 level_to_tier_reference = Array[int]([0, 1, 1])
-milestone_required_per_level = Array[Resource("res://classes/milestone.gd")]([ExtResource("4_e0n5b")])
+milestone_required_per_level = Array[Resource("res://classes/milestone.gd")]([ExtResource("4_6gvpt")])
 
 [node name="OpenEntityUiComponent" parent="." instance=ExtResource("5_pcnb4")]
 

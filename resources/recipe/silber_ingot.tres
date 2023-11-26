@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RecipeResource" load_steps=2 format=3 uid="uid://40un15kmc6jf"]
+
+[ext_resource type="Script" path="res://classes/recipe.gd" id="1_4i1ni"]
+
+[resource]
+script = ExtResource("1_4i1ni")
+materials = {
+"silver_ore": 5
+}
+produced_item = "silver_ingot"
+production_speed_multiplier = 1.0

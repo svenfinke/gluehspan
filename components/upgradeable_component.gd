@@ -28,8 +28,10 @@ func upgrade() -> void:
 		# No more tiers available
 		return
 	
-	if len(milestone_required_per_level) > level and not milestone_required_per_level[level].achieved:
-		return
+	if len(milestone_required_per_level) > level and milestone_required_per_level[level] != null:
+		if not milestone_required_per_level[level].achieved:
+			return
+		
 	
 	if not inventory.canConsume("money", upgrade_cost_per_level[level]):
 		# Not enough money
@@ -37,11 +39,17 @@ func upgrade() -> void:
 	
 	inventory.consume("money", upgrade_cost_per_level[level])
 	level += 1
+	$AnimationPlayer.play("upgrade")
 	upgraded.emit()
 	update_visibility()
 
 func is_upgrade_available() -> bool:
 	return level < max_level
+
+func return_current_milestone() -> Milestone:
+	if is_upgrade_blocked_by_milestone():
+		return milestone_required_per_level[level]
+	return null
 
 func is_upgrade_blocked_by_milestone() -> bool:
 	# No milestone defined for current level

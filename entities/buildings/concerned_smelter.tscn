@@ -1,12 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5pe05xvbrmwy"]
+[gd_scene load_steps=10 format=3 uid="uid://b5pe05xvbrmwy"]
 
 [ext_resource type="TileSet" uid="uid://eba87q6e1trb" path="res://assets/tiny.tres" id="1_b1x3d"]
 [ext_resource type="PackedScene" uid="uid://d31jvtxihgnms" path="res://components/crafting_component.tscn" id="2_ywunc"]
 [ext_resource type="Resource" uid="uid://dttlspmtti6xr" path="res://resources/recipe/brass_ingot.tres" id="4_3lf4s"]
-[ext_resource type="Resource" uid="uid://be4qgc50db1vs" path="res://resources/recipe/zinc_ingot.tres" id="4_b0t82"]
+[ext_resource type="Resource" uid="uid://26vwp1x7g6vm" path="res://resources/recipe/iron_ingot.tres" id="4_xx3a2"]
 [ext_resource type="PackedScene" uid="uid://cp4yn4tpj75cs" path="res://components/upgradeable_component.tscn" id="5_678lp"]
-[ext_resource type="Resource" uid="uid://csycauqg5ba73" path="res://resources/milestones/copper_ore_obtained.tres" id="6_nh0du"]
-[ext_resource type="Resource" uid="uid://cdvwdnw4j0exi" path="res://resources/milestones/brass_ingot_obtained.tres" id="7_b2u2a"]
+[ext_resource type="Resource" uid="uid://62wdnsm6e8ry" path="res://resources/milestones/zinc_ingot_obtained.tres" id="6_df82c"]
 [ext_resource type="PackedScene" uid="uid://cye2t304c5ntj" path="res://components/open_entity_ui_component.tscn" id="8_8743y"]
 [ext_resource type="PackedScene" uid="uid://cel4nbymoiovo" path="res://components/flag_component.tscn" id="9_e2b52"]
 
@@ -49,16 +48,16 @@ shape = SubResource("RectangleShape2D_1q7nx")
 
 [node name="CraftingComponent" parent="." node_paths=PackedStringArray("upgradeable_component") instance=ExtResource("2_ywunc")]
 position = Vector2(5, -37)
-base_production_per_second_per_level = Array[float]([0.0, 1.0, 2.0])
+base_production_per_second_per_level = Array[float]([0.0, 0.4, 0.8, 2.0])
 upgradeable_component = NodePath("../UpgradeableComponent")
-recipes = Array[Resource("res://classes/recipe.gd")]([ExtResource("4_b0t82"), ExtResource("4_3lf4s")])
-produced_item = "zinc_ingot"
+recipes = Array[Resource("res://classes/recipe.gd")]([ExtResource("4_3lf4s"), ExtResource("4_xx3a2")])
+produced_item = "brass_ingot"
 
 [node name="UpgradeableComponent" parent="." instance=ExtResource("5_678lp")]
-max_level = 2
-upgrade_cost_per_level = Array[int]([150, 300])
-level_to_tier_reference = Array[int]([0, 1, 1])
-milestone_required_per_level = Array[Resource("res://classes/milestone.gd")]([ExtResource("6_nh0du"), ExtResource("7_b2u2a")])
+max_level = 3
+upgrade_cost_per_level = Array[int]([250, 750, 1500, 2500])
+level_to_tier_reference = Array[int]([0, 1, 1, 1])
+milestone_required_per_level = Array[Resource("res://classes/milestone.gd")]([ExtResource("6_df82c")])
 
 [node name="OpenEntityUiComponent" parent="." instance=ExtResource("8_8743y")]
 

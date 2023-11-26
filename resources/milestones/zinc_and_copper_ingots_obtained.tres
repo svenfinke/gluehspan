@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Milestone" load_steps=5 format=3 uid="uid://c8g73gbdxe0fi"]
+
+[ext_resource type="Script" path="res://classes/milestoneCondition.gd" id="1_4imb2"]
+[ext_resource type="Script" path="res://classes/milestone.gd" id="1_hq0ka"]
+
+[sub_resource type="Resource" id="Resource_gyq1c"]
+script = ExtResource("1_4imb2")
+type = 0
+item_name = "copper_ingot"
+value = 1
+state = false
+
+[sub_resource type="Resource" id="Resource_o3h01"]
+script = ExtResource("1_4imb2")
+type = 0
+item_name = "zinc_ingot"
+value = 1
+state = false
+
+[resource]
+script = ExtResource("1_hq0ka")
+name = "zinc_and_copper_ingot_obtained"
+conditions = Array[ExtResource("1_4imb2")]([SubResource("Resource_gyq1c"), SubResource("Resource_o3h01")])
+achieved = false

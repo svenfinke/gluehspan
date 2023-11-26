@@ -2,15 +2,16 @@ extends Node
 
 @export var inventory: InventoryResource
 @export var market: MarketResource
-@export var sell_interval_in_seconds: float
+@export var sell_interval_in_seconds_per_level: Array[float]
 @export var max_amount_per_sell: int
 @export var sell_item_slots: Array[String] = []
+@export var upgradeable_component: Node
 
 var progress: float = 0
 
 func _process(delta) -> void:
 	progress += delta
-	if progress >= sell_interval_in_seconds:
+	if progress >= sell_interval_in_seconds_per_level[upgradeable_component.level]:
 		progress = 0
 		sell_items()
 

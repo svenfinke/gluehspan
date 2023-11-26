@@ -6,7 +6,7 @@
 script = ExtResource("1_bed4l")
 materials = {
 "coal": 5,
-"iron_ingot": 5
+"iron_ingot": 1
 }
 produced_item = "steel_ingot"
 production_speed_multiplier = 1.0

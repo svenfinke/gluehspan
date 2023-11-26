@@ -19,4 +19,4 @@
 
 [resource]
 script = ExtResource("1_6jc7s")
-milestones = [ExtResource("1_qg81f"), ExtResource("2_lgh6j"), ExtResource("3_0ie74"), ExtResource("4_dr1hd"), ExtResource("5_xmbt6"), ExtResource("6_tuhlp"), ExtResource("7_hoqkq"), ExtResource("8_hgcu0"), ExtResource("9_u85cc"), ExtResource("10_pha1c"), ExtResource("11_sg6ef"), ExtResource("12_yiv8q"), ExtResource("13_0kjbg"), ExtResource("14_2xp4s"), ExtResource("15_c77uf")]
+milestones = Array[Resource("res://classes/milestone.gd")]([ExtResource("1_qg81f"), ExtResource("2_lgh6j"), ExtResource("3_0ie74"), ExtResource("4_dr1hd"), ExtResource("5_xmbt6"), ExtResource("6_tuhlp"), ExtResource("7_hoqkq"), ExtResource("8_hgcu0"), ExtResource("9_u85cc"), ExtResource("10_pha1c"), ExtResource("11_sg6ef"), ExtResource("12_yiv8q"), ExtResource("13_0kjbg"), ExtResource("14_2xp4s"), ExtResource("15_c77uf")])

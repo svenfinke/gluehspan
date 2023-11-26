@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RecipeResource" load_steps=2 format=3 uid="uid://b1oaug7ytogjy"]
+
+[ext_resource type="Script" path="res://classes/recipe.gd" id="1_1pf8w"]
+
+[resource]
+script = ExtResource("1_1pf8w")
+materials = {
+"gold_ore": 5
+}
+produced_item = "gold_ingot"
+production_speed_multiplier = 1.0

@@ -13,5 +13,5 @@ state = false
 [resource]
 script = ExtResource("1_l37cr")
 name = "zinc_ore_obtained"
-conditions = [SubResource("Resource_h18xe")]
+conditions = Array[ExtResource("1_fmvh8")]([SubResource("Resource_h18xe")])
 achieved = false

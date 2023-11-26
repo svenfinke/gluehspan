@@ -1,14 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://7l3uoxn3sbyv"]
+[gd_scene load_steps=10 format=3 uid="uid://7l3uoxn3sbyv"]
 
 [ext_resource type="TileSet" uid="uid://eba87q6e1trb" path="res://assets/tiny.tres" id="1_pohfw"]
 [ext_resource type="PackedScene" uid="uid://d31jvtxihgnms" path="res://components/crafting_component.tscn" id="2_df08p"]
-[ext_resource type="Resource" uid="uid://be4qgc50db1vs" path="res://resources/recipe/zinc_ingot.tres" id="3_038m8"]
-[ext_resource type="Resource" uid="uid://cefux8i536r3p" path="res://resources/recipe/copper_ingot.tres" id="3_qee2b"]
-[ext_resource type="Resource" uid="uid://dttlspmtti6xr" path="res://resources/recipe/brass_ingot.tres" id="4_axxr3"]
 [ext_resource type="PackedScene" uid="uid://cp4yn4tpj75cs" path="res://components/upgradeable_component.tscn" id="5_nbqyb"]
+[ext_resource type="Resource" uid="uid://7pnjfl7g52ac" path="res://resources/milestones/coal_obtained.tres" id="6_5r0jd"]
 [ext_resource type="Resource" uid="uid://dgqg5na4amr74" path="res://resources/recipe/steel_ingot.tres" id="6_rr0y6"]
+[ext_resource type="Resource" uid="uid://26vwp1x7g6vm" path="res://resources/recipe/iron_ingot.tres" id="7_y3upg"]
 [ext_resource type="PackedScene" uid="uid://cye2t304c5ntj" path="res://components/open_entity_ui_component.tscn" id="9_mpevd"]
-[ext_resource type="Resource" uid="uid://by4stl81ji7gp" path="res://resources/milestones/iron_ingot_obtained.tres" id="9_v0tq0"]
 [ext_resource type="PackedScene" uid="uid://cel4nbymoiovo" path="res://components/flag_component.tscn" id="10_jtjn3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1q7nx"]
@@ -49,14 +47,14 @@ shape = SubResource("RectangleShape2D_1q7nx")
 position = Vector2(5, -37)
 base_production_per_second_per_level = Array[float]([0.0, 1.0, 2.0])
 upgradeable_component = NodePath("../UpgradeableComponent")
-recipes = Array[Resource("res://classes/recipe.gd")]([ExtResource("3_qee2b"), ExtResource("3_038m8"), ExtResource("4_axxr3"), ExtResource("6_rr0y6")])
-produced_item = "zinc_ingot"
+recipes = Array[Resource("res://classes/recipe.gd")]([ExtResource("6_rr0y6"), ExtResource("7_y3upg")])
+produced_item = "steel_ingot"
 
 [node name="UpgradeableComponent" parent="." instance=ExtResource("5_nbqyb")]
 max_level = 2
-upgrade_cost_per_level = Array[int]([1000, 3500])
+upgrade_cost_per_level = Array[int]([1000, 1750, 3000])
 level_to_tier_reference = Array[int]([0, 1, 1])
-milestone_required_per_level = Array[Resource("res://classes/milestone.gd")]([ExtResource("9_v0tq0")])
+milestone_required_per_level = Array[Resource("res://classes/milestone.gd")]([ExtResource("6_5r0jd")])
 
 [node name="OpenEntityUiComponent" parent="." instance=ExtResource("9_mpevd")]
 

@@ -21,7 +21,7 @@ script = ExtResource("1_2vwj7")
 name = "iron_ore"
 in_stock = 0
 texture = SubResource("AtlasTexture_wx5um")
-base_price = 70.0
+base_price = 10.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7m8xk"]
 atlas = ExtResource("3_iowll")
@@ -32,7 +32,7 @@ script = ExtResource("1_2vwj7")
 name = "iron_ingot"
 in_stock = 0
 texture = SubResource("AtlasTexture_7m8xk")
-base_price = 700.0
+base_price = 100.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r4e8u"]
 atlas = ExtResource("3_iowll")
@@ -65,7 +65,7 @@ script = ExtResource("1_2vwj7")
 name = "zinc_ore"
 in_stock = 0
 texture = SubResource("AtlasTexture_gx7ok")
-base_price = 1.0
+base_price = 2.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0v7p"]
 atlas = ExtResource("3_iowll")
@@ -76,7 +76,7 @@ script = ExtResource("1_2vwj7")
 name = "zinc_ingot"
 in_stock = 0
 texture = SubResource("AtlasTexture_n0v7p")
-base_price = 10.0
+base_price = 20.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_olqh6"]
 atlas = ExtResource("3_iowll")
@@ -87,7 +87,7 @@ script = ExtResource("1_2vwj7")
 name = "brass_ingot"
 in_stock = 0
 texture = SubResource("AtlasTexture_olqh6")
-base_price = 600.0
+base_price = 60.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhtvb"]
 atlas = ExtResource("3_iowll")
@@ -98,7 +98,7 @@ script = ExtResource("1_2vwj7")
 name = "steel_ingot"
 in_stock = 0
 texture = SubResource("AtlasTexture_xhtvb")
-base_price = 2000.0
+base_price = 200.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mo3ft"]
 atlas = ExtResource("3_iowll")
@@ -109,7 +109,7 @@ script = ExtResource("1_2vwj7")
 name = "coal"
 in_stock = 0
 texture = SubResource("AtlasTexture_mo3ft")
-base_price = 20.0
+base_price = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1d6sj"]
 atlas = ExtResource("3_iowll")
@@ -120,7 +120,7 @@ script = ExtResource("1_2vwj7")
 name = "silver_ore"
 in_stock = 0
 texture = SubResource("AtlasTexture_1d6sj")
-base_price = 500.0
+base_price = 50.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ia5w"]
 atlas = ExtResource("3_iowll")
@@ -131,7 +131,7 @@ script = ExtResource("1_2vwj7")
 name = "silver_ingot"
 in_stock = 0
 texture = SubResource("AtlasTexture_1ia5w")
-base_price = 5000.0
+base_price = 500.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6fxeq"]
 atlas = ExtResource("3_iowll")
@@ -142,7 +142,7 @@ script = ExtResource("1_2vwj7")
 name = "gold_ore"
 in_stock = 0
 texture = SubResource("AtlasTexture_6fxeq")
-base_price = 1000.0
+base_price = 100.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qgaje"]
 atlas = ExtResource("3_iowll")
@@ -153,8 +153,8 @@ script = ExtResource("1_2vwj7")
 name = "gold_ingot"
 in_stock = 0
 texture = SubResource("AtlasTexture_qgaje")
-base_price = 10000.0
+base_price = 1000.0
 
 [resource]
 script = ExtResource("1_rkxys")
-items = [SubResource("Resource_plqr1"), SubResource("Resource_5byio"), SubResource("Resource_qdwgl"), SubResource("Resource_m1814"), SubResource("Resource_4qcxr"), SubResource("Resource_dhx7v"), SubResource("Resource_4pnyk"), SubResource("Resource_kdy7u"), SubResource("Resource_vanh4"), SubResource("Resource_o4k1p"), SubResource("Resource_vu17p"), SubResource("Resource_eiy5j"), SubResource("Resource_ckj6g"), SubResource("Resource_se8ss")]
+items = Array[ExtResource("1_2vwj7")]([SubResource("Resource_plqr1"), SubResource("Resource_5byio"), SubResource("Resource_qdwgl"), SubResource("Resource_m1814"), SubResource("Resource_4qcxr"), SubResource("Resource_dhx7v"), SubResource("Resource_4pnyk"), SubResource("Resource_kdy7u"), SubResource("Resource_vanh4"), SubResource("Resource_o4k1p"), SubResource("Resource_vu17p"), SubResource("Resource_eiy5j"), SubResource("Resource_ckj6g"), SubResource("Resource_se8ss")])

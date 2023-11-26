@@ -1,10 +1,73 @@
-[gd_scene load_steps=4 format=3 uid="uid://cp4yn4tpj75cs"]
+[gd_scene load_steps=9 format=3 uid="uid://cp4yn4tpj75cs"]
 
 [ext_resource type="Script" path="res://components/upgradeable_component.gd" id="1_l4s51"]
 [ext_resource type="Resource" uid="uid://debwxhtv0aaxx" path="res://resources/inventory.tres" id="2_4lter"]
 [ext_resource type="Resource" uid="uid://ce2xqv4jr245p" path="res://resources/milestone_manager.tres" id="3_3550o"]
+[ext_resource type="Texture2D" uid="uid://cm1taof26k345" path="res://assets/kenney_particle-pack/PNG (Transparent)/smoke_07.png" id="4_i42v5"]
+[ext_resource type="AudioStream" uid="uid://doct4p6iyvj37" path="res://assets/kenney_interface-sounds/Audio/scroll_002.ogg" id="5_3557k"]
 
-[node name="UpgradeableComponent" type="Node"]
+[sub_resource type="Gradient" id="Gradient_6yke4"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Animation" id="Animation_u1dts"]
+resource_name = "upgrade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UpgradeParticleLayer01:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ges7u"]
+_data = {
+"upgrade": SubResource("Animation_u1dts")
+}
+
+[node name="UpgradeableComponent" type="Node2D"]
 script = ExtResource("1_l4s51")
 inventory = ExtResource("2_4lter")
 milestones = ExtResource("3_3550o")
+
+[node name="UpgradeParticleLayer01" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 32
+one_shot = true
+texture = ExtResource("4_i42v5")
+emission_shape = 1
+emission_sphere_radius = 73.37
+direction = Vector2(2.08165e-12, -1)
+spread = 49.89
+gravity = Vector2(2.08165e-12, 2.08165e-12)
+initial_velocity_min = 23.98
+initial_velocity_max = 69.54
+angle_min = -202.7
+angle_max = 131.6
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+color_ramp = SubResource("Gradient_6yke4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ges7u")
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_3557k")

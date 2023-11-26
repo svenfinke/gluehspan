@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource("1_dgqu3")
 materials = {
-"copper_ingot": 3,
-"zinc_ingot": 3
+"copper_ingot": 1,
+"zinc_ingot": 1
 }
 produced_item = "brass_ingot"
 production_speed_multiplier = 1.0

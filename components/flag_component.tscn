@@ -1,6 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://cel4nbymoiovo"]
+[gd_scene load_steps=5 format=3 uid="uid://cel4nbymoiovo"]
 
 [ext_resource type="Script" path="res://components/flag_component.gd" id="1_a2yps"]
+[ext_resource type="AudioStream" uid="uid://g0fq1ltem2a7" path="res://assets/kenney_interface-sounds/Audio/maximize_008.ogg" id="2_3mei3"]
+[ext_resource type="Texture2D" uid="uid://bhoetblmemaqe" path="res://assets/kenney_particle-pack/PNG (Transparent)/star_09.png" id="3_mclls"]
 
-[node name="FlagComponent" type="Node"]
+[sub_resource type="Gradient" id="Gradient_wbytf"]
+offsets = PackedFloat32Array(0, 0.305835, 1)
+colors = PackedColorArray(0.168627, 0.560784, 0.819608, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="FlagComponent" type="Node2D"]
 script = ExtResource("1_a2yps")
+
+[node name="FlagChangedBlue" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_3mei3")
+
+[node name="HighlightParticles" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(-40, 7)
+emitting = false
+draw_order = 1
+texture = ExtResource("3_mclls")
+emission_shape = 1
+emission_sphere_radius = 4.03
+spread = 180.0
+gravity = Vector2(2.08165e-12, 2.08165e-12)
+initial_velocity_min = 13.56
+initial_velocity_max = 37.29
+angle_min = -184.0
+angle_max = 78.1
+scale_amount_min = 0.02
+scale_amount_max = 0.05
+color_ramp = SubResource("Gradient_wbytf")

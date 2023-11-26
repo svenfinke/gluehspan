@@ -27,8 +27,5 @@ func _process(delta: float) -> void:
 	if progress >= 1 * current_recipe.production_speed_multiplier:				
 		if inventory.craft(produced_item, current_recipe.materials):
 			progress = 0
-			var particle : CPUParticles2D = $ProductionParticle.duplicate()
-			get_tree().current_scene.add_child(particle)
-			particle.global_position = $ProductionParticle.global_position
-			particle.texture = inventory.get_item(produced_item).texture
-			particle.emitting = true
+			$ProductionParticle.texture = inventory.get_item(produced_item).texture
+			$ProductionParticle.emitting = true

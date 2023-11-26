@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://bccdlde3ecqib"]
+
+[ext_resource type="TileSet" uid="uid://eba87q6e1trb" path="res://assets/tiny.tres" id="1_87qjh"]
+[ext_resource type="PackedScene" uid="uid://d31jvtxihgnms" path="res://components/crafting_component.tscn" id="2_ttws2"]
+[ext_resource type="Resource" uid="uid://26vwp1x7g6vm" path="res://resources/recipe/iron_ingot.tres" id="4_e4xcl"]
+[ext_resource type="Resource" uid="uid://c17ainf11ylo0" path="res://resources/milestones/iron_ore_obtained.tres" id="5_i02a6"]
+[ext_resource type="PackedScene" uid="uid://cp4yn4tpj75cs" path="res://components/upgradeable_component.tscn" id="5_qywm8"]
+[ext_resource type="PackedScene" uid="uid://cye2t304c5ntj" path="res://components/open_entity_ui_component.tscn" id="7_bu5si"]
+[ext_resource type="PackedScene" uid="uid://cel4nbymoiovo" path="res://components/flag_component.tscn" id="8_3wr32"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1q7nx"]
+
+[node name="Ironic Forgery" type="Node2D"]
+texture_filter = 1
+metadata/Name = "Ironic Forgery"
+
+[node name="Tier1" type="TileMap" parent="."]
+tile_set = ExtResource("1_87qjh")
+format = 2
+layer_0/tile_data = PackedInt32Array(-393222, 65537, 1, -393221, 65537, 1, -393220, 65537, 1, -393219, 65537, 1, -393218, 65537, 1, -327686, 0, 4, -262150, 0, 4, -196614, 0, 4, -458751, 65537, 1, -458752, 65537, 1, -393217, 65537, 1, -393223, 1, 1, -327687, 1, 2, -262151, 1, 2, -196615, 1, 2, -131079, 1, 3, -65542, 1, 3, -131078, 393217, 3, -65543, 131073, 0, -524288, 131073, 0, -524287, 1, 0, -458753, 1, 0, -458754, 1, 0, -458755, 1, 0, -458756, 1, 0, -458757, 1, 0, -458758, 1, 0, -458759, 1, 0, -458750, 131073, 1, -393214, 131073, 2, -327678, 131073, 2, -262142, 131073, 2)
+layer_1/name = ""
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(0, 1048578, 0, -65535, 327681, 7, -65536, 327681, 6, -1, 262145, 6, -65534, 262145, 7, -65533, 458753, 6, -131073, 262145, 4, -65537, 262145, 5, -196608, 327681, 4, -131072, 327681, 5, -196607, 327681, 4, -131071, 327681, 5, -196605, 393217, 4, -131069, 393217, 5, -196606, 458753, 4, -131070, 458753, 5, -65540, 4, 7, -65539, 65540, 7, -65538, 131076, 7, -131076, 327680, 2, -131074, 327680, 2, -131075, 262144, 2, -65541, 589824, 4, -131077, 589824, 4, -3, 589824, 6, 65533, 589824, 6, 131069, 589824, 7, 131070, 524288, 6, 65534, 327680, 7, -196612, 131072, 0, -196611, 131072, 0, -196610, 131072, 0, -196609, 131072, 0, -262144, 131072, 0, -262143, 327680, 1, -327680, 0, 1, -262145, 0, 0, -262146, 0, 0, -262147, 0, 0, -262148, 0, 2, -196613, 262144, 1, -327679, 65536, 1, -262149, 196608, 1, -327685, 262144, 0, -393215, 327680, 0, -327684, 131072, 2, -327683, 131072, 2, -327682, 131072, 2, -327681, 131072, 2, -393216, 131072, 2, -2, 131076, 3, 65535, 131072, 6, -458759, 458753, 1, -393223, 524289, 2, -327687, 524289, 0, -262151, 458753, 1, -196615, 524289, 2, -131079, 524289, 1, -65543, 524289, 1, -458758, 458753, 1, -458757, 458753, 1, -458756, 458753, 1, -458755, 458753, 1, -458754, 524289, 1, -262150, 524289, 1, -131078, 262145, 2, -393222, 393217, 2, -393221, 524289, 2, -393220, 458753, 2, -393219, 458753, 2, -393218, 262145, 2, -327686, 327681, 0)
+
+[node name="Tier0" type="TileMap" parent="."]
+visible = false
+tile_set = ExtResource("1_87qjh")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65536, 1048578, 0)
+
+[node name="AreaTier1" type="Area2D" parent="."]
+position = Vector2(7, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTier1"]
+shape = SubResource("RectangleShape2D_1q7nx")
+
+[node name="AreaTier0" type="Area2D" parent="."]
+position = Vector2(7, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTier0"]
+shape = SubResource("RectangleShape2D_1q7nx")
+
+[node name="CraftingComponent" parent="." node_paths=PackedStringArray("upgradeable_component") instance=ExtResource("2_ttws2")]
+position = Vector2(5, -37)
+base_production_per_second_per_level = Array[float]([0.0, 1.0, 2.0])
+upgradeable_component = NodePath("../UpgradeableComponent")
+recipes = Array[Resource("res://classes/recipe.gd")]([ExtResource("4_e4xcl")])
+produced_item = "iron_ingot"
+
+[node name="UpgradeableComponent" parent="." instance=ExtResource("5_qywm8")]
+max_level = 2
+upgrade_cost_per_level = Array[int]([500, 1000, 2000])
+level_to_tier_reference = Array[int]([0, 1, 1])
+milestone_required_per_level = Array[Resource("res://classes/milestone.gd")]([ExtResource("5_i02a6")])
+
+[node name="OpenEntityUiComponent" parent="." instance=ExtResource("7_bu5si")]
+
+[node name="FlagComponent" parent="." node_paths=PackedStringArray("upgradeable_component") instance=ExtResource("8_3wr32")]
+upgradeable_component = NodePath("../UpgradeableComponent")
+flags = Array[Vector2]([Vector2(2.08165e-12, -1), Vector2(0, 0)])
